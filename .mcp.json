@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "dataiku_factory": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["server-hardened/dist/mcp-server.js"],
+      "env_vars": ["DSS_HOST", "DSS_API_KEY", "DSS_INSECURE_TLS"]
+    }
+  }
+}

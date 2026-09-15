@@ -1,0 +1,40 @@
+{
+  "name": "dataiku",
+  "version": "0.1.0",
+  "description": "Operate and troubleshoot Dataiku DSS projects, datasets, recipes, scenarios, and jobs through Codex.",
+  "author": {
+    "name": "PT All Data International"
+  },
+  "homepage": "https://github.com/hef-max/mcp-dataiku-audited",
+  "repository": "https://github.com/hef-max/mcp-dataiku-audited",
+  "license": "MIT",
+  "keywords": [
+    "dataiku",
+    "dss",
+    "mcp",
+    "data-engineering",
+    "automation"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Dataiku",
+    "shortDescription": "Manage Dataiku DSS from Codex",
+    "longDescription": "Explore Dataiku projects and flows, inspect datasets, develop recipes, operate scenarios, and diagnose failed jobs through a Dataiku DSS MCP server.",
+    "developerName": "PT All Data International",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Project exploration",
+      "Dataset and recipe management",
+      "Scenario operations",
+      "Job monitoring and debugging"
+    ],
+    "websiteURL": "https://github.com/hef-max/mcp-dataiku-audited",
+    "defaultPrompt": [
+      "Show the projects available in Dataiku DSS",
+      "Inspect a Dataiku project flow and its datasets",
+      "Diagnose the latest failed Dataiku scenario"
+    ],
+    "brandColor": "#2AB1AC"
+  }
+}

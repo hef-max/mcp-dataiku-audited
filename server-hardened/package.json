@@ -1,0 +1,48 @@
+{
+  "name": "@adi-internal/mcp-dataiku-hardened",
+  "version": "0.1.0",
+  "description": "Auditable, dependency-minimized MCP server for Dataiku DSS",
+  "type": "module",
+  "main": "dist/mcp-server.js",
+  "bin": {
+    "mcp-dataiku": "dist/mcp-server.js"
+  },
+  "files": [
+    "dist/**/*",
+    "src/**/*",
+    "README.md",
+    "SECURITY.md",
+    "UPSTREAM.md",
+    "sbom.cdx.json",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/mcp-server.js",
+    "check": "tsc --noEmit",
+    "audit:prod": "npm audit --omit=dev --audit-level=high",
+    "prepack": "npm run check && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "dataiku",
+    "dss",
+    "data-science",
+    "etl",
+    "server",
+    "model-context-protocol"
+  ],
+  "author": "PT All Data International",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.30",
+    "typescript": "5.8.3"
+  },
+  "private": true
+}
