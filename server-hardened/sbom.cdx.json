@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:2a881e00-db09-4bca-96c7-9a2b8f27d141",
+  "serialNumber": "urn:uuid:ee72a839-b1f6-401e-aeb4-510eb4516663",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-09-02T10:25:15.120Z",
+    "timestamp": "2026-11-03T03:30:14.451Z",
     "lifecycles": [
       {
         "phase": "build"
@@ -45,19 +45,569 @@
   },
   "components": [
     {
-      "bom-ref": "@hono/node-server@2.1.1",
+      "bom-ref": "@eslint-community/eslint-utils@4.10.1",
+      "type": "library",
+      "name": "@eslint-community/eslint-utils",
+      "version": "4.10.1",
+      "scope": "required",
+      "author": "Toru Nagashima",
+      "description": "Utilities for ESLint plugins.",
+      "purl": "pkg:npm/%40eslint-community/eslint-utils@4.10.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint-community/eslint-utils/-/eslint-utils-4.10.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/eslint-community/eslint-utils"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint-community/eslint-utils#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint-community/eslint-utils/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "72e69d73154513cb032ba89625bb3c4a7d1abf636b8764121908559415bd01a007a87c235ac6474fc2c9e211463e1ec048157675e15d33b1ff0cf8ee96687cae"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "eslint-visitor-keys@3.4.3",
+      "type": "library",
+      "name": "eslint-visitor-keys",
+      "version": "3.4.3",
+      "scope": "required",
+      "author": "Toru Nagashima (https://github.com/mysticatea)",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "purl": "pkg:npm/eslint-visitor-keys@3.4.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/eslint-visitor-keys#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/eslint-visitor-keys/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c2973e2d77a2ca28acc4f944914cd4eacbf24b57eb20edcc8318f57ddcbb3e6f1883382e6b1d8ddc56bf0ff6a0d56a9b3a9add23eb98eb031497cfdad86fa26a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@eslint-community/regexpp@4.12.2",
+      "type": "library",
+      "name": "@eslint-community/regexpp",
+      "version": "4.12.2",
+      "scope": "required",
+      "author": "Toru Nagashima",
+      "description": "Regular expression parser for ECMAScript.",
+      "purl": "pkg:npm/%40eslint-community/regexpp@4.12.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.12.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/eslint-community/regexpp"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint-community/regexpp#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint-community/regexpp/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "12b8924e5b79382f7fed25e445208085f4b1c684948019b7dce1fe224c1b769828aac4ac520ef2dee87e208088fd08380415abdd4da2dfd4699b271bc4cab87b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@eslint/config-array@0.21.2",
+      "type": "library",
+      "name": "@eslint/config-array",
+      "version": "0.21.2",
+      "scope": "required",
+      "author": "Nicholas C. Zakas",
+      "description": "General purpose glob-based configuration matching.",
+      "purl": "pkg:npm/%40eslint/config-array@0.21.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint/config-array/-/config-array-0.21.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/eslint/rewrite.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/rewrite/tree/main/packages/config-array#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/rewrite/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9c99762864e5adff468cb8a6808aeef95fe6ce048ad000420d046fc70e418d444bed67c7e6ea169a2cdb1fb401e8c9a730177c7080bdb9c7969deccbd556565b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@eslint/config-helpers@0.4.2",
+      "type": "library",
+      "name": "@eslint/config-helpers",
+      "version": "0.4.2",
+      "scope": "required",
+      "description": "Helper utilities for creating ESLint configuration",
+      "purl": "pkg:npm/%40eslint/config-helpers@0.4.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint/config-helpers/-/config-helpers-0.4.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/eslint/rewrite.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/rewrite/tree/main/packages/config-helpers#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/rewrite/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "801af137cf203887f747b8dae4af6c97035ac9571980ae923943919b6b81cd378811f79568884ea42b53a31dcfe91ee8da32c5c0b1532e70bb914fd119c60483"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@eslint/core@0.17.0",
+      "type": "library",
+      "name": "@eslint/core",
+      "version": "0.17.0",
+      "scope": "required",
+      "author": "Nicholas C. Zakas",
+      "description": "Runtime-agnostic core of ESLint",
+      "purl": "pkg:npm/%40eslint/core@0.17.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint/core/-/core-0.17.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/eslint/rewrite.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/rewrite/tree/main/packages/core#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/rewrite/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c8bfec2eba66b43685122523d68b113f84c8d8c0f3d4075d24bfa367b292aaf06e962378c6a618e7821f74df2a0fc4e86ba8358a5a298757f140d9233b1aeba5"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@eslint/eslintrc@3.3.7",
+      "type": "library",
+      "name": "@eslint/eslintrc",
+      "version": "3.3.7",
+      "scope": "required",
+      "author": "Nicholas C. Zakas",
+      "description": "The legacy ESLintRC config file format for ESLint",
+      "purl": "pkg:npm/%40eslint/eslintrc@3.3.7",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-3.3.7.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/eslintrc#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/eslintrc/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "178da0f3d41de68016b69d24d279d2ae3ce200acdaef0f12553e264ad735f0b64c6916f82751d00072c26a512d0c2c6b4ee92cc7b354f6ab2678bc2939f3ea5b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "ajv@6.15.0",
+      "type": "library",
+      "name": "ajv",
+      "version": "6.15.0",
+      "scope": "required",
+      "author": "Evgeny Poberezkin",
+      "description": "Another JSON Schema Validator",
+      "purl": "pkg:npm/ajv@6.15.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/ajv/-/ajv-6.15.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/ajv-validator/ajv.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/ajv-validator/ajv"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/ajv-validator/ajv/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7e0171ec77e8abad32b4ad9cec386717c8c8bf362038cc5fba08cb3923078cb20f81e9ea6bb4bba1a6a001352af7d995e8862f376b51982d309d3617ea23db33"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "json-schema-traverse@0.4.1",
+      "type": "library",
+      "name": "json-schema-traverse",
+      "version": "0.4.1",
+      "scope": "required",
+      "author": "Evgeny Poberezkin",
+      "description": "Traverse JSON Schema passing each schema object to callback",
+      "purl": "pkg:npm/json-schema-traverse@0.4.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/epoberezkin/json-schema-traverse.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/epoberezkin/json-schema-traverse#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/epoberezkin/json-schema-traverse/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c5b6c21f9742614e53f0b704861ba1ec727cf075ee5b7aac237634cce64529f6441dca5688753f271ce4eb6f41aec69bfe63221d0b62f7030ffbce3944f7b756"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@eslint/js@9.39.5",
+      "type": "library",
+      "name": "@eslint/js",
+      "version": "9.39.5",
+      "scope": "required",
+      "description": "ESLint JavaScript language implementation",
+      "purl": "pkg:npm/%40eslint/js@9.39.5",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint/js/-/js-9.39.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/eslint/eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://eslint.org"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "432c10baccd087bee92170acabdf7c73c85b8524c8fdacd3b72d59e8de7776602e74a1e1cb9ef78f7caf44bb17d814a9f18a4bb680841bc13d0c97bef33521e0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@eslint/object-schema@2.1.7",
+      "type": "library",
+      "name": "@eslint/object-schema",
+      "version": "2.1.7",
+      "scope": "required",
+      "author": "Nicholas C. Zakas",
+      "description": "An object schema merger/validator",
+      "purl": "pkg:npm/%40eslint/object-schema@2.1.7",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint/object-schema/-/object-schema-2.1.7.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/eslint/rewrite.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/rewrite/tree/main/packages/object-schema#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/rewrite/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "56d00e6b299655f65c9996e9e84da6ca6a43207bf28d7b3fd762ea5988d5c3aaa3adf17e54af9fc86df7902873de79caf92539fcd7873aaad31074bcb173b738"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@eslint/plugin-kit@0.4.1",
+      "type": "library",
+      "name": "@eslint/plugin-kit",
+      "version": "0.4.1",
+      "scope": "required",
+      "author": "Nicholas C. Zakas",
+      "description": "Utilities for building ESLint plugins.",
+      "purl": "pkg:npm/%40eslint/plugin-kit@0.4.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@eslint/plugin-kit/-/plugin-kit-0.4.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/eslint/rewrite.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/rewrite/tree/main/packages/plugin-kit#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/rewrite/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e37feab6b0d4a24afb2c9aa8176737f91227bbfb78cdfae961da120df632860e76af02d5e939cebdd1b87d79bb224481df012b91c9894bd88486356d3921238c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@hono/node-server@2.1.6",
       "type": "library",
       "name": "@hono/node-server",
-      "version": "2.1.1",
+      "version": "2.1.6",
       "scope": "required",
       "author": "Yusuke Wada <yusuke@kamawada.com> (https://github.com/yusukebe)",
       "description": "Node.js Adapter for Hono",
-      "purl": "pkg:npm/%40hono/node-server@2.1.1",
+      "purl": "pkg:npm/%40hono/node-server@2.1.6",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/@hono/node-server/-/node-server-2.1.1.tgz"
+          "url": "https://registry.npmjs.org/@hono/node-server/-/node-server-2.1.6.tgz"
         },
         {
           "type": "vcs",
@@ -71,7 +621,7 @@
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "10bb9e8648f954205d804c3dcecfa2be42b0cb3cd409242e13de989a23ef9f51020686427336c55c92de106313623a613fa832761e291cca8460f54c61456042"
+          "content": "a7f287f4c9df35cb26dec47ac7894d826e63f9037812df2cacaade765f4365f5e2c99d54437690d9856914b6ea92d60de4923e0c1f9564528cd8fa84e612ca8d"
         }
       ],
       "licenses": [
@@ -83,19 +633,238 @@
       ]
     },
     {
-      "bom-ref": "@modelcontextprotocol/sdk@1.30.0",
+      "bom-ref": "@humanfs/core@0.19.2",
+      "type": "library",
+      "name": "@humanfs/core",
+      "version": "0.19.2",
+      "scope": "required",
+      "author": "Nicholas C. Zakas",
+      "description": "The core of the humanfs library.",
+      "purl": "pkg:npm/%40humanfs/core@0.19.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@humanfs/core/-/core-0.19.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/humanwhocodes/humanfs.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/humanwhocodes/humanfs#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/humanwhocodes/humanfs/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5215cd9be08531671b0a15f2c05c249a1aa3b373d10a67126bf85f0602c86fba10e4735bd704b489c5ac1ad48050d81e7c7788f9e06b03c2357f199b1ec19dbc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@humanfs/node@0.16.8",
+      "type": "library",
+      "name": "@humanfs/node",
+      "version": "0.16.8",
+      "scope": "required",
+      "author": "Nicholas C. Zakas",
+      "description": "The Node.js bindings of the humanfs library.",
+      "purl": "pkg:npm/%40humanfs/node@0.16.8",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@humanfs/node/-/node-0.16.8.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/humanwhocodes/humanfs.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/humanwhocodes/humanfs#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/humanwhocodes/humanfs/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "804d5e40d67747efa44f3154a5d1a5a66cbc903643fcc2f21ea0f0aa3915408d0931d2350f9d6ccb51fde7c3cd5d890cdab01a73b7b9fc29c8299ac7b4f87705"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@humanfs/types@0.15.0",
+      "type": "library",
+      "name": "@humanfs/types",
+      "version": "0.15.0",
+      "scope": "required",
+      "author": "Nicholas C. Zakas",
+      "description": "The TypeScript types for the hfs project.",
+      "purl": "pkg:npm/%40humanfs/types@0.15.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@humanfs/types/-/types-0.15.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/humanwhocodes/humanfs.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/humanwhocodes/humanfs#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/humanwhocodes/humanfs/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "659d70d1aa10930b94b82ed87feeec75e68d7ea42288b71245b7c8d3ca00c6a2eda5742bf402155fb032ec72c3ba22d801a14fbbca0160dabf4088bd5111c9dd"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@humanwhocodes/module-importer@1.0.1",
+      "type": "library",
+      "name": "@humanwhocodes/module-importer",
+      "version": "1.0.1",
+      "scope": "required",
+      "author": "Nicholas C. Zaks",
+      "description": "Universal module importer for Node.js",
+      "purl": "pkg:npm/%40humanwhocodes/module-importer@1.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@humanwhocodes/module-importer/-/module-importer-1.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/humanwhocodes/module-importer.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6f1bde57857cbf961be277054d3deb3d281904ea429237cad32e28555549c08b8354144c0d7acfc9744bf7cf22e5aa7d9bd6e7c8412359f9b95a4066b5f7cb7c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@humanwhocodes/retry@0.4.3",
+      "type": "library",
+      "name": "@humanwhocodes/retry",
+      "version": "0.4.3",
+      "scope": "required",
+      "author": "Nicholas C. Zaks",
+      "description": "A utility to retry failed async methods.",
+      "purl": "pkg:npm/%40humanwhocodes/retry@0.4.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@humanwhocodes/retry/-/retry-0.4.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/humanwhocodes/retry.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6d5d13828f4ae217cf09e93e68c027f35469a452afdb248341e328499baf4c04b2c0d4e7549080ac2644d855aaa6f21ab4abbb54c44b5a547511acef5610f285"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@modelcontextprotocol/sdk@1.32.2",
       "type": "library",
       "name": "@modelcontextprotocol/sdk",
-      "version": "1.30.0",
+      "version": "1.32.2",
       "scope": "required",
       "author": "Anthropic, PBC (https://anthropic.com)",
       "description": "Model Context Protocol implementation for TypeScript",
-      "purl": "pkg:npm/%40modelcontextprotocol/sdk@1.30.0",
+      "purl": "pkg:npm/%40modelcontextprotocol/sdk@1.32.2",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.30.0.tgz"
+          "url": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.32.2.tgz"
         },
         {
           "type": "vcs",
@@ -109,7 +878,91 @@
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "c4a77c388ce5a8dcdca9c36e98601aea0f8f5b69230f9beba5c28e9df95d0143cfde3ee59ea30fc254d7426f2017e5301fbdb3d25a9a45b8ebf61a86cf47884c"
+          "content": "496b15b47ff4bd42d2412b6867ac711f62b4f4b8bc7d7613302eb865ea2009da59dd74a2d5e08f381c95d4ea6e271b88dce7261e1a2c0d66328a2d3bb693ec2f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@types/estree@1.0.9",
+      "type": "library",
+      "name": "@types/estree",
+      "version": "1.0.9",
+      "scope": "required",
+      "description": "TypeScript definitions for estree",
+      "purl": "pkg:npm/%40types/estree@1.0.9",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@types/estree/-/estree-1.0.9.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1a174f832d5e978fc898fd395f4e54c38730dbf33ddc10949a712f599352b650b310a304e05924f98a680393a21cd426a12ec269f6fc5dadcfc9af26d50af37a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@types/json-schema@7.0.15",
+      "type": "library",
+      "name": "@types/json-schema",
+      "version": "7.0.15",
+      "scope": "required",
+      "description": "TypeScript definitions for json-schema",
+      "purl": "pkg:npm/%40types/json-schema@7.0.15",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.15.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/json-schema"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e7e7cff0ff0c14d0be0326420f1ac1da991914f1b3a90594ce949ebae54bbe6f1531ca2b3586af06aa057312bc6d0cf842c6e7e2850411e9b8c032df732b061c"
         }
       ],
       "licenses": [
@@ -163,6 +1016,671 @@
       ]
     },
     {
+      "bom-ref": "@typescript-eslint/eslint-plugin@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/eslint-plugin",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "TypeScript plugin for ESLint",
+      "purl": "pkg:npm/%40typescript-eslint/eslint-plugin@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io/packages/eslint-plugin"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9c336b510ff8aee48d61bbbbe3d4d163b71faf33eda0b1c45d234123c69a358df62e56426a38b1a917f716a70a0b8a7909a9b854e1d8c7fb7e8b9fa7297beba8"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "ignore@7.0.10",
+      "type": "library",
+      "name": "ignore",
+      "version": "7.0.10",
+      "scope": "required",
+      "author": "kael",
+      "description": "Ignore is a manager and filter for .gitignore rules, the one used by eslint, gitbook and many others.",
+      "purl": "pkg:npm/ignore@7.0.10",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/ignore/-/ignore-7.0.10.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/kaelzhang/node-ignore.git"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/kaelzhang/node-ignore/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1e96d46a44fbc69e66881532c021dfdfa644b8024d9250490c3b06a5422333339298cf042d27c0f526bf4033de35ea9ea0ddf5bbe5130a42f892508e56f466e1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/parser@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/parser",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "An ESLint custom parser which leverages TypeScript ESTree",
+      "purl": "pkg:npm/%40typescript-eslint/parser@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io/packages/parser"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9cef7be162e59708521564179cc2e3ea70c66bc7f4921284cf5273a4f275bbb566ff85f55fa6476a3a689275386dbe35bc9c8c0741c75724b61aa76159f21767"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/project-service@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/project-service",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "Standalone TypeScript project service wrapper for linting.",
+      "purl": "pkg:npm/%40typescript-eslint/project-service@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/project-service/-/project-service-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "eb6c4e81ba0f7f0737fc880f497fd6ea8411dd96c5d38d7de053c65061fc1cbf222c51dbb7fe39ebff0f875c0b35481517eb3de05947a22a41b33fafefe2cc9c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/scope-manager@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/scope-manager",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "TypeScript scope analyser for ESLint",
+      "purl": "pkg:npm/%40typescript-eslint/scope-manager@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/scope-manager/-/scope-manager-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io/packages/scope-manager"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3dad04792780bac41cd566e340c69cf987de9dec184c1bb42a3818be450ac215da1d429b168836dc39bfae9d035ffeadc98390dd79756bedc4705359ca71870b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/tsconfig-utils@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/tsconfig-utils",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "Utilities for collecting TSConfigs for linting scenarios.",
+      "purl": "pkg:npm/%40typescript-eslint/tsconfig-utils@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8ee9b37b57cf23eb0339a3364d6190767dfd3c3c53afb4d919ebb22e401b372c76bed313dee46754a0a137485f86de55d93ba0a6127317a6d85ef05c134f6aaa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/type-utils@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/type-utils",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "Type utilities for working with TypeScript + ESLint together",
+      "purl": "pkg:npm/%40typescript-eslint/type-utils@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/type-utils/-/type-utils-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ef32939f2bda556ab32d91cf150b57d61547aa090c0be59e6cf59a90d092cab4156c83f500cd0bd1394166d00295d2116fa3e9b48f0e764fa3c99e643f707554"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/types@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/types",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "Types for the TypeScript-ESTree AST spec",
+      "purl": "pkg:npm/%40typescript-eslint/types@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/types/-/types-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0e6d72a5d861ac6093cb27a1c44961809ea4824f0c542bf9a97768395a8faf5baa938da35fc2a3ad9aa144ebdd4a173303caab0e86223969f5ca45a5c7693cd5"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/typescript-estree@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/typescript-estree",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "A parser that converts TypeScript source code into an ESTree compatible form",
+      "purl": "pkg:npm/%40typescript-eslint/typescript-estree@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io/packages/typescript-estree"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4d4f0fc3218dd0f40951c13dea6c3c782438e129b119d4252669566a41da1d0d79788baebf27b9c8db6687f8baa12f3c8f35d5401ef5c5d3646e407f7ccc0bd2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "balanced-match@4.0.4",
+      "type": "library",
+      "name": "balanced-match",
+      "version": "4.0.4",
+      "scope": "required",
+      "description": "Match balanced character pairs, like \"{\" and \"}\"",
+      "purl": "pkg:npm/balanced-match@4.0.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-4.0.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/juliangruber/balanced-match.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "04bae011c453c17da8ea01b118e08dc8cbc64a9df96287ee633c3d87520c4d198aaadb40659554ebb6dd6fd3ebdaf50703cfa3de2dad25f8cee82ebee26c864c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "brace-expansion@5.0.12",
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "5.0.12",
+      "scope": "required",
+      "description": "Brace expansion as known from sh/bash",
+      "purl": "pkg:npm/brace-expansion@5.0.12",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.12.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/juliangruber/brace-expansion.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "628bd0debce168b308ac38cd0cc90d4b4d6d79af77aa11211b9c72f1febe47497e770dca8bee6c0a822823de368ae2d94c75a881692d830543854d3d88d12299"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "minimatch@10.2.6",
+      "type": "library",
+      "name": "minimatch",
+      "version": "10.2.6",
+      "scope": "required",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
+      "description": "a glob matcher in javascript",
+      "purl": "pkg:npm/minimatch@10.2.6",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:isaacs/minimatch"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "be92d012cf952c2af59d4d015d2d3b99a628170943007d209e042ebadb71230bad0c510c1ead9b957fbcbe98310dd2b72753f08c22627a9efb3a2b536782e5d4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/utils@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/utils",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "Utilities for working with TypeScript + ESLint together",
+      "purl": "pkg:npm/%40typescript-eslint/utils@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/utils/-/utils-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io/packages/utils"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "12c82e97c32c9ca9d12dd614d846f671157d6d2e47258b4a8f50722673b3cc6d8ce7c0c6752510d6352e20bc62a6a72907687d58badb0f91a28c85948d7fd3ab"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "@typescript-eslint/visitor-keys@8.70.1",
+      "type": "library",
+      "name": "@typescript-eslint/visitor-keys",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "Visitor keys used to help traverse the TypeScript-ESTree AST",
+      "purl": "pkg:npm/%40typescript-eslint/visitor-keys@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/@typescript-eslint/visitor-keys/-/visitor-keys-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5708fd954216e57ab7c10f70ea0bf747cea0d6130af1fdb334e7464c081e5d430c5c52bbf06f6bb828e3aaeb4730d25cd3e087ecb6119c779407d213f3016673"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "eslint-visitor-keys@5.0.1",
+      "type": "library",
+      "name": "eslint-visitor-keys",
+      "version": "5.0.1",
+      "scope": "required",
+      "author": "Toru Nagashima (https://github.com/mysticatea)",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "purl": "pkg:npm/eslint-visitor-keys@5.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-5.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/eslint/js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/js/blob/main/packages/eslint-visitor-keys/README.md"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b43e34787c40df98743c421935e223907a034786238c9a77e1b88cd260efa6505efff981f881c2a870c657ba7117eecc9254ef8a085c08f3d90bbca75b28dd4c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "accepts@2.0.0",
       "type": "library",
       "name": "accepts",
@@ -181,6 +1699,90 @@
         {
           "alg": "SHA-512",
           "content": "e5cbe0e82b4ac1f81d995a98d562225ca7374356e446a18b8bed96ffa6a8fba63b82efd10b046e021184ce1e41e0a96ccd2b932e0658baa16aa396c89a334a9e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "acorn@8.18.0",
+      "type": "library",
+      "name": "acorn",
+      "version": "8.18.0",
+      "scope": "required",
+      "description": "ECMAScript parser",
+      "purl": "pkg:npm/acorn@8.18.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/acorn/-/acorn-8.18.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/acornjs/acorn.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/acornjs/acorn"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "946abef72af5fc6b8059a558207463befc921b9ff855f288bc2f045b14ad3dd70387f29aec51b7b703fabf8779064adabd48a584802c1b8423f37b74d8b5943d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "acorn-jsx@5.3.2",
+      "type": "library",
+      "name": "acorn-jsx",
+      "version": "5.3.2",
+      "scope": "required",
+      "description": "Modern, fast React.js JSX parser",
+      "purl": "pkg:npm/acorn-jsx@5.3.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/acorn-jsx/-/acorn-jsx-5.3.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/acornjs/acorn-jsx"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/acornjs/acorn-jsx"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "aeaf6cf893617f4202863b435f196527b838d68664e52957b69d0b1f0c80e5c7a3c27eef2a62a9e293eb8ba60478fbf63d4eb9b00b1e81b5ed2229e60c50d781"
         }
       ],
       "licenses": [
@@ -268,24 +1870,136 @@
       ]
     },
     {
-      "bom-ref": "body-parser@2.3.0",
+      "bom-ref": "ansi-styles@4.3.0",
       "type": "library",
-      "name": "body-parser",
-      "version": "2.3.0",
+      "name": "ansi-styles",
+      "version": "4.3.0",
       "scope": "required",
-      "description": "Node.js body parsing middleware",
-      "purl": "pkg:npm/body-parser@2.3.0",
-      "properties": [],
+      "author": "Sindre Sorhus",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "purl": "pkg:npm/ansi-styles@4.3.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/body-parser/-/body-parser-2.3.0.tgz"
+          "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz"
         }
       ],
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "d9c1a626ea5a36083e414c152c0b9c0ee5aea0c67a117f621c346cc19e65b0d6049b03da4649cc3c22d9cf4ef24f356affcde9e28ff0cdb0d96c1ad3bc619323"
+          "content": "cdb07dac22404f5adb8e25436f686a2851cd60bc60b64f0d511c59dc86700f717a36dc5b5d94029e74a2d4b931f880e885d3e5169db6db05402c885e64941212"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "argparse@2.0.1",
+      "type": "library",
+      "name": "argparse",
+      "version": "2.0.1",
+      "scope": "required",
+      "description": "CLI arguments parser. Native port of python's argparse.",
+      "purl": "pkg:npm/argparse@2.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f3ef56a9e6db173a57f4e47e59ae8edbd6ac22881e44ccdc1ad00835da4c1c7c80835d1fd3969215505b704a867ff3d7c35123019faadbf6c4060dc3beeacadd"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Python-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "balanced-match@1.0.2",
+      "type": "library",
+      "name": "balanced-match",
+      "version": "1.0.2",
+      "scope": "required",
+      "author": "Julian Gruber",
+      "description": "Match balanced character pairs, like \"{\" and \"}\"",
+      "purl": "pkg:npm/balanced-match@1.0.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/juliangruber/balanced-match.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/juliangruber/balanced-match"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "de849e50ed13315ebb84dd4099b5ec2b8c9aa94eed8e21e56f144364ea47d0a5bdf82797e1b440697d009f1b74b71d8cae94695b041a3f02252121098585393f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "body-parser@2.4.0",
+      "type": "library",
+      "name": "body-parser",
+      "version": "2.4.0",
+      "scope": "required",
+      "description": "Node.js body parsing middleware",
+      "purl": "pkg:npm/body-parser@2.4.0",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/body-parser/-/body-parser-2.4.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "21f93529c2ebc5a1add6871c41a81034534d3aa46dd4b16e7a11271c7cc1f19e9c460231454d5305a888b14882740fa0cb93cbed8d485f7d4334a9119b1b578d"
         }
       ],
       "licenses": [
@@ -316,6 +2030,49 @@
         {
           "alg": "SHA-512",
           "content": "9a3ed43d71348daa9a3acba435945411f122d8070bec2fefc26c1c1d5d0ef7b78ed44d69c4166eca3959af1e6c79368d060d54ebea37e70a5adf941f71cfbb6a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "brace-expansion@1.1.21",
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "1.1.21",
+      "scope": "required",
+      "author": "Julian Gruber",
+      "description": "Brace expansion as known from sh/bash",
+      "purl": "pkg:npm/brace-expansion@1.1.21",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.21.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/juliangruber/brace-expansion.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/juliangruber/brace-expansion"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f73780f8a2d934dce0945d933ca450103cb1e986f2edd68092ecbc3223f3a573ec6035a2fc344cf239b0503c689108d8a81a6fe4380f8b00f88786594b2d548f"
         }
       ],
       "licenses": [
@@ -430,6 +2187,196 @@
         {
           "alg": "SHA-512",
           "content": "fb2b3df7b53dea9a382b1fc0069042aa103d12ec49690583420ef6f791f8841a61bf72198346e804abb0629b78617a7a319e4099942753fb72313951a5a49e8e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "callsites@3.1.0",
+      "type": "library",
+      "name": "callsites",
+      "version": "3.1.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Get callsites from the V8 stack trace API",
+      "purl": "pkg:npm/callsites@3.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/callsites/-/callsites-3.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "3fc06302c5ef652f95203508d7584709012fef8613ebb6148b924914d588a8bdb7e6c0668d7e3eab1f4cbaf96ce62bf234435cb71e3ac502d0dda4ee13bb2c69"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "chalk@4.1.2",
+      "type": "library",
+      "name": "chalk",
+      "version": "4.1.2",
+      "scope": "required",
+      "description": "Terminal string styling done right",
+      "purl": "pkg:npm/chalk@4.1.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a0a9db845c91217a54b9ecfc881326c846b89db8f820e432ba173fc32f6463bfd654f73020ef5503aebc3eef1190eefed06efa48b44e7b2c3d0a9434eb58b898"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "color-convert@2.0.1",
+      "type": "library",
+      "name": "color-convert",
+      "version": "2.0.1",
+      "scope": "required",
+      "author": "Heather Arthur <fayearthur@gmail.com>",
+      "description": "Plain color conversion functions",
+      "purl": "pkg:npm/color-convert@2.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4511023ec8fb8aeff16f9a0a61cb051d2a6914d9ec8ffe763954d129be333f9a275f0545df3566993a0d70e7c60be0910e97cafd4e7ce1f320dfc64709a12529"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "color-name@1.1.4",
+      "type": "library",
+      "name": "color-name",
+      "version": "1.1.4",
+      "scope": "required",
+      "author": "DY <dfcreative@gmail.com>",
+      "description": "A list of color names and its values",
+      "purl": "pkg:npm/color-name@1.1.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:colorjs/color-name.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/colorjs/color-name"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/colorjs/color-name/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "74ecbedc0b96ddadb035b64722e319a537208c6b8b53fb812ffb9b71917d3976c3a3c7dfe0ef32569e417f479f4bcb84a18a39ab8171edd63d3a04065e002c40"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "concat-map@0.0.1",
+      "type": "library",
+      "name": "concat-map",
+      "version": "0.0.1",
+      "scope": "required",
+      "author": "James Halliday",
+      "description": "concatenative mapdashery",
+      "purl": "pkg:npm/concat-map@0.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/substack/node-concat-map.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "fd2aefe1db30c903417e8846a73f68e986f71b3dd2ad40ea047e6b4ee84647b6a1b656d82a7571c366c214c4658da03b1171da5d9f30b07768745bdb9212a6aa"
         }
       ],
       "licenses": [
@@ -656,6 +2603,45 @@
         {
           "alg": "SHA-512",
           "content": "446c305a7c10be455f6af295b76d8518bc3ec5849dcc04709b4aeee83853540dee994e6165cdbc57790ee2cb6062bcab4e52e9baf808f468a28e5b408cd6dca8"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "deep-is@0.1.4",
+      "type": "library",
+      "name": "deep-is",
+      "version": "0.1.4",
+      "scope": "required",
+      "author": "Thorsten Lorenz",
+      "description": "node's assert.deepEqual algorithm except for NaN being equal to NaN",
+      "purl": "pkg:npm/deep-is@0.1.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/deep-is/-/deep-is-0.1.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "http://github.com/thlorenz/deep-is.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a083f392c993838fccae289a6063bea245c34fbced9ffc37129b6fffe81221d31d2ac268d2ee027d834524fcbee1228cb82a86c36c319c0f9444c837b7c6bf6d"
         }
       ],
       "licenses": [
@@ -953,6 +2939,389 @@
       ]
     },
     {
+      "bom-ref": "escape-string-regexp@4.0.0",
+      "type": "library",
+      "name": "escape-string-regexp",
+      "version": "4.0.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Escape RegExp special characters",
+      "purl": "pkg:npm/escape-string-regexp@4.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4eda5c349dd7033c771aaf2c591cc96956a346cd2e57103660091d6f58e6d9890fcf81ba7a05050320379f9bed10865e7cf93959ae145db2ae4b97ca90959d80"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "eslint@9.39.5",
+      "type": "library",
+      "name": "eslint",
+      "version": "9.39.5",
+      "scope": "required",
+      "author": "Nicholas C. Zakas <nicholas+npm@nczconsulting.com>",
+      "description": "An AST-based pattern checker for JavaScript.",
+      "purl": "pkg:npm/eslint@9.39.5",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/eslint/-/eslint-9.39.5.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://eslint.org"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0e0652eb668f2d72a59f120b4bf0180a846f1da65e5dc788ce55cf924186cc9592a30d5a124d256d39715129728c2f2371a2b101d3a74c3cfea35245481b328f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "eslint-scope@8.4.0",
+      "type": "library",
+      "name": "eslint-scope",
+      "version": "8.4.0",
+      "scope": "required",
+      "description": "ECMAScript scope analyzer for ESLint",
+      "purl": "pkg:npm/eslint-scope@8.4.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/eslint-scope/-/eslint-scope-8.4.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/eslint/js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/js/blob/main/packages/eslint-scope/README.md"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b0d5ce7ca0a7ef8aedf1120228cbc94bb5ca57f5e4f6403b0f226bf262629374bb0b0832dea964926c92dae401de388983a54d75977fa43049bb49ef1b63654e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "eslint-visitor-keys@4.2.1",
+      "type": "library",
+      "name": "eslint-visitor-keys",
+      "version": "4.2.1",
+      "scope": "required",
+      "author": "Toru Nagashima (https://github.com/mysticatea)",
+      "description": "Constants and utilities about visitor keys to traverse AST.",
+      "purl": "pkg:npm/eslint-visitor-keys@4.2.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-4.2.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/eslint/js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/js/blob/main/packages/eslint-visitor-keys/README.md"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "521764e6c7ea71e7bff47feb08e262918cfaee8d1ad93c3684644f386d98d51d9d83b6eb45ed6e1b4c9a3500c7bbe4cefee40f17fe5e09aa6f612987523b7b25"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "espree@10.4.0",
+      "type": "library",
+      "name": "espree",
+      "version": "10.4.0",
+      "scope": "required",
+      "author": "Nicholas C. Zakas <nicholas+npm@nczconsulting.com>",
+      "description": "An Esprima-compatible JavaScript parser built on Acorn",
+      "purl": "pkg:npm/espree@10.4.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/espree/-/espree-10.4.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/eslint/js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/eslint/js/blob/main/packages/espree/README.md"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/eslint/js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "8fa3c0436b94afbf4f6610633f90b97e197c7b7f459919ce8ec0f99469d6ac553c8b61bbefab412bbfa73fc2ae4144d3c80654c1f42a5c082b547e4c6c7f4261"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "esquery@1.7.0",
+      "type": "library",
+      "name": "esquery",
+      "version": "1.7.0",
+      "scope": "required",
+      "author": "Joel Feenstra <jrfeenst+esquery@gmail.com>",
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "purl": "pkg:npm/esquery@1.7.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/esquery/-/esquery-1.7.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/estools/esquery.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/estools/esquery/"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "029e86d16430714fcb1ecbcbc0e3757c0417f59a7403663a63f709065f6bfc96d6f74672838ff36c6eb3cca6b639300b10b6ab60798abb41a1a4ce443beed3d2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "esrecurse@4.3.0",
+      "type": "library",
+      "name": "esrecurse",
+      "version": "4.3.0",
+      "scope": "required",
+      "description": "ECMAScript AST recursive visitor",
+      "purl": "pkg:npm/esrecurse@4.3.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/esrecurse/-/esrecurse-4.3.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/estools/esrecurse.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/estools/esrecurse"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2a67ca2f76fa1be457bcff0dd6faf74ead642ffa021609f63585c4b6a3fcfcbde929aa540381bc70555aa05dd2537db7083e17ca947f7df8a81e692d8bafd36a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "estraverse@5.3.0",
+      "type": "library",
+      "name": "estraverse",
+      "version": "5.3.0",
+      "scope": "required",
+      "description": "ECMAScript JS AST traversal functions",
+      "purl": "pkg:npm/estraverse@5.3.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/estraverse/-/estraverse-5.3.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "http://github.com/estools/estraverse.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/estools/estraverse"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "30c74046e54443388d4de243f0380caa6870475d41450fdc04ffa92ed61d4939dfdcc20ef1f15e8883446d7dfa65d3657d4ffb03d7f7814c38f41de842cbf004"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "esutils@2.0.3",
+      "type": "library",
+      "name": "esutils",
+      "version": "2.0.3",
+      "scope": "required",
+      "description": "utility box for ECMAScript language tools",
+      "purl": "pkg:npm/esutils@2.0.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "http://github.com/estools/esutils.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/estools/esutils"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "915b1ca97938382a7af126747648042958baffc8a3df4d0a0564c9ab7d8ffdd61e5934b02b8d56c93c5a94dd5e46603967d514fcb5fd0fb1564a657d480631ea"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "etag@1.8.1",
       "type": "library",
       "name": "etag",
@@ -1180,19 +3549,101 @@
       ]
     },
     {
-      "bom-ref": "fast-uri@3.1.6",
+      "bom-ref": "fast-json-stable-stringify@2.1.0",
+      "type": "library",
+      "name": "fast-json-stable-stringify",
+      "version": "2.1.0",
+      "scope": "required",
+      "author": "James Halliday",
+      "description": "deterministic `JSON.stringify()` - a faster version of substack's json-stable-strigify without jsonify",
+      "purl": "pkg:npm/fast-json-stable-stringify@2.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/epoberezkin/fast-json-stable-stringify.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/epoberezkin/fast-json-stable-stringify"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "96177fc05f8b93df076684c2b6556b687b5f8795d88a32236a55dc93bb1a52db9a9d20f22ccc671e149710326a1f10fb9ac47c0f4b829aa964c23095f31bf01f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "fast-levenshtein@2.0.6",
+      "type": "library",
+      "name": "fast-levenshtein",
+      "version": "2.0.6",
+      "scope": "required",
+      "author": "Ramesh Nair <ram@hiddentao.com> (http://www.hiddentao.com/)",
+      "description": "Efficient implementation of Levenshtein algorithm  with locale-specific collator support.",
+      "purl": "pkg:npm/fast-levenshtein@2.0.6",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/hiddentao/fast-levenshtein.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "0c25eee887e1a9c92ced364a6371f1a77cbaaa9858e522599ab58c0eb29c11148e5d641d32153d220fcf62bcf2c3fba5f63388ca1d0de0cd2d6c2e61a1d83c77"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "fast-uri@3.1.9",
       "type": "library",
       "name": "fast-uri",
-      "version": "3.1.6",
+      "version": "3.1.9",
       "scope": "required",
       "author": "Vincent Le Goff <vince.legoff@gmail.com> (https://github.com/zekth)",
       "description": "Dependency-free RFC 3986 URI toolbox",
-      "purl": "pkg:npm/fast-uri@3.1.6",
+      "purl": "pkg:npm/fast-uri@3.1.9",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.6.tgz"
+          "url": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.9.tgz"
         },
         {
           "type": "vcs",
@@ -1210,13 +3661,95 @@
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "ec871a975bc510caf4a276d5cc40c8ade336d88e24856f9fcf240fc2f005581a758b076c852651b0be238d1bcf1bd24fd6e8aa30746da3e614e91dbf0b30f3e5"
+          "content": "852ff45addd86b4e37a0a5ecd2c231acca4a4084d784c2c8ad500a2978b8828cc60bdbfb6115959d7219ce334f4ced3633d05dc4b096a8ad7245780dce257225"
         }
       ],
       "licenses": [
         {
           "license": {
             "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "fdir@6.5.0",
+      "type": "library",
+      "name": "fdir",
+      "version": "6.5.0",
+      "scope": "required",
+      "author": "thecodrr <thecodrr@protonmail.com>",
+      "description": "The fastest directory crawler & globbing alternative to glob, fast-glob, & tiny-glob. Crawls 1m files in < 1s",
+      "purl": "pkg:npm/fdir@6.5.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/thecodrr/fdir.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/thecodrr/fdir#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/thecodrr/fdir/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "b486d8b596ee70eb340511aa3c992c84951874bf920c7edd54cf208f2f84469dd60148cb105244fb4da46a7c87b708d63a7c2b298062c0098cd29e242c90275e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "file-entry-cache@8.0.0",
+      "type": "library",
+      "name": "file-entry-cache",
+      "version": "8.0.0",
+      "scope": "required",
+      "author": "Jared Wray",
+      "description": "Super simple cache for file metadata, useful for process that work o a given series of files and that only need to repeat the job on the changed ones since the previous run of the process",
+      "purl": "pkg:npm/file-entry-cache@8.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/file-entry-cache/-/file-entry-cache-8.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5d74d4c02be2b1ae6869c34644ff527cdb5804d00c8be44fc011666e564417b37bb301d8412ebf65f93b491c31e03e63dc21f6d7560d45ca350c430d55f6429d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
           }
         }
       ]
@@ -1247,6 +3780,123 @@
         {
           "license": {
             "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "find-up@5.0.0",
+      "type": "library",
+      "name": "find-up",
+      "version": "5.0.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Find a file or directory by walking up parent directories",
+      "purl": "pkg:npm/find-up@5.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/find-up/-/find-up-5.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "efcfcf5d3d7094b2c3813cc3b3bb23abd873cf4bd70fece7fbbc32a447b87d74310a6766a9f1ac10f4319a2092408dda8c557dd5b552b2f36dac94625ba9c69e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "flat-cache@4.0.1",
+      "type": "library",
+      "name": "flat-cache",
+      "version": "4.0.1",
+      "scope": "required",
+      "author": "Jared Wray",
+      "description": "A stupidly simple key/value storage using files to persist some data",
+      "purl": "pkg:npm/flat-cache@4.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/flat-cache/-/flat-cache-4.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7fb71c14f2b7497147a71d795081b2449fc525072db8a674cd5b8dddfac1a381e72b771acbd5445b447ac8f6051c2d0082a86e90fcca8eadb6b790e6032a86cb"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "flatted@3.4.4",
+      "type": "library",
+      "name": "flatted",
+      "version": "3.4.4",
+      "scope": "required",
+      "author": "Andrea Giammarchi",
+      "description": "A super light and fast circular JSON parser.",
+      "purl": "pkg:npm/flatted@3.4.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/flatted/-/flatted-3.4.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/WebReflection/flatted.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/WebReflection/flatted#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/WebReflection/flatted/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e7ec9b841640344271687dd7e5ebc015ab54c4b7c41d2afb9fa91827ed50774994aabe1ebbd8087fa1836d61dff112628c7ae38cef06fa56b5e1294bd92792d5"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
           }
         }
       ]
@@ -1437,6 +4087,76 @@
       ]
     },
     {
+      "bom-ref": "glob-parent@6.0.2",
+      "type": "library",
+      "name": "glob-parent",
+      "version": "6.0.2",
+      "scope": "required",
+      "author": "Gulp Team <team@gulpjs.com> (https://gulpjs.com/)",
+      "description": "Extract the non-magic parent path from a glob string.",
+      "purl": "pkg:npm/glob-parent@6.0.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5f1c08f043a1550816a7a8832feddbd2bf3a7f877a017eb3494e791df078c9d084b972d773915c61e3aefa79c67ed4b84c48eeff5d6bb782893d33206df9afe0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "globals@14.0.0",
+      "type": "library",
+      "name": "globals",
+      "version": "14.0.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Global identifiers from different JavaScript environments",
+      "purl": "pkg:npm/globals@14.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/globals/-/globals-14.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a1a846bee3064253f0fe2bc86018d54ab5807d62c17a4bb9b693c4d9f38f2e2f961df7c859bba1dad0a38724214c13cc7f913d8c3107e053a64d8818c1b2b0b5"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "gopd@1.2.0",
       "type": "library",
       "name": "gopd",
@@ -1468,6 +4188,41 @@
         {
           "alg": "SHA-512",
           "content": "65429187afe4505a0089302d4d83d9277870f70371c7e04804e8a39e51bd3e7ac9b027128ecd70cb20fabc9a5a62d827cc3aca6114aa7f738ee917daf77c6c46"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "has-flag@4.0.0",
+      "type": "library",
+      "name": "has-flag",
+      "version": "4.0.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Check if argv has a specific flag",
+      "purl": "pkg:npm/has-flag@4.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1329094ff4352a34d672da698080207d23b4b4a56e6548e180caf5ee4a93ba6325e807efdc421295e53ba99533a170c54c01d30c2e0d3a81bf67153712f94c3d"
         }
       ],
       "licenses": [
@@ -1563,19 +4318,19 @@
       ]
     },
     {
-      "bom-ref": "hono@4.13.5",
+      "bom-ref": "hono@4.13.16",
       "type": "library",
       "name": "hono",
-      "version": "4.13.5",
+      "version": "4.13.16",
       "scope": "required",
       "author": "Yusuke Wada <yusuke@kamawada.com> (https://github.com/yusukebe)",
       "description": "Web framework built on Web Standards",
-      "purl": "pkg:npm/hono@4.13.5",
+      "purl": "pkg:npm/hono@4.13.16",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/hono/-/hono-4.13.5.tgz"
+          "url": "https://registry.npmjs.org/hono/-/hono-4.13.16.tgz"
         },
         {
           "type": "vcs",
@@ -1589,7 +4344,7 @@
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "3bafbf782611933cf3cb4acf5b028b886051d6716e50f6729e7c23c4dd4c040eb634da9b4f4c101334322b68123b9c83203077dfab1742578084e1ebce56322b"
+          "content": "00e2ce121beb57e887f76c570a716bff9fb72a33ca708df13fadd726d5f9b290279339cf7478a3948b144e98bbffd1215aaad309e930e5ce738752be62c570ec"
         }
       ],
       "licenses": [
@@ -1669,6 +4424,131 @@
       ]
     },
     {
+      "bom-ref": "ignore@5.3.2",
+      "type": "library",
+      "name": "ignore",
+      "version": "5.3.2",
+      "scope": "required",
+      "author": "kael",
+      "description": "Ignore is a manager and filter for .gitignore rules, the one used by eslint, gitbook and many others.",
+      "purl": "pkg:npm/ignore@5.3.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/ignore/-/ignore-5.3.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git@github.com:kaelzhang/node-ignore.git"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/kaelzhang/node-ignore/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "86c053354a904c3c245ad71d608da2d3a63f9d4044b0d10324a8d676280bbde832f240ee2404bcb91969924710a721172f467fa630f2e4706632344227682afa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "import-fresh@3.3.1",
+      "type": "library",
+      "name": "import-fresh",
+      "version": "3.3.1",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Import a module while bypassing the cache",
+      "purl": "pkg:npm/import-fresh@3.3.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4d1dca7eb4d94d82cf07a8d48dfc7a305f56716ac72fdb2ee5339b2b866462005d58a3ce1684a8408744b93b91f36a66b711f6b29586f61e9eb707ebd692c1a9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "imurmurhash@0.1.4",
+      "type": "library",
+      "name": "imurmurhash",
+      "version": "0.1.4",
+      "scope": "required",
+      "author": "Jens Taylor",
+      "description": "An incremental implementation of MurmurHash3",
+      "purl": "pkg:npm/imurmurhash@0.1.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/jensyt/imurmurhash-js"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jensyt/imurmurhash-js"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/jensyt/imurmurhash-js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2665cc67ac2ebc398b88712697dca4cea3ba97015ba1fd061b822470668435d0910c398c5679f2eece47b0880709b6aad30d8cc8f843aa48535204b62d4d8f1c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "inherits@2.0.4",
       "type": "library",
       "name": "inherits",
@@ -1698,19 +4578,19 @@
       ]
     },
     {
-      "bom-ref": "ip-address@10.7.0",
+      "bom-ref": "ip-address@10.7.5",
       "type": "library",
       "name": "ip-address",
-      "version": "10.7.0",
+      "version": "10.7.5",
       "scope": "required",
       "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
       "description": "A library for parsing IPv4 and IPv6 IP addresses in node and the browser.",
-      "purl": "pkg:npm/ip-address@10.7.0",
+      "purl": "pkg:npm/ip-address@10.7.5",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/ip-address/-/ip-address-10.7.0.tgz"
+          "url": "https://registry.npmjs.org/ip-address/-/ip-address-10.7.5.tgz"
         },
         {
           "type": "vcs",
@@ -1720,7 +4600,7 @@
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "04616cc897799a95e9deb2ba8c87400cb360a4950ad639e3cef605f252be5720da6fd2409aa37460e28374fd7b1e580a6f6f9e84f80373c12d9d12db18200c84"
+          "content": "b76bf4ae420b62ff565e648bed3a40694dc75e068560e3d4707dd01e0c10fbe82926e1f76eac8ccb816fb7f0c90932b0cc7dc27fe6c0a795bf9852f7f4a3cbcc"
         }
       ],
       "licenses": [
@@ -1751,6 +4631,92 @@
         {
           "alg": "SHA-512",
           "content": "d0a23feb4ef1a31493a07ec68cdd457d26cba14d3e6ed4e2723b1049642587f859ca437c2a998c7fbb98c0f5b747e6a467a47fc35f199574870585e26143cede"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "is-extglob@2.1.1",
+      "type": "library",
+      "name": "is-extglob",
+      "version": "2.1.1",
+      "scope": "required",
+      "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+      "description": "Returns true if a string has an extglob.",
+      "purl": "pkg:npm/is-extglob@2.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jonschlinkert/is-extglob"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/jonschlinkert/is-extglob/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "49b29b00d90deb4dd58b88c466fe3d2de549327e321b0b1bcd9c28ac4a32122badb0dde725875b3b7eb37e1189e90103a4e6481640ed9eae494719af9778eca1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "is-glob@4.0.3",
+      "type": "library",
+      "name": "is-glob",
+      "version": "4.0.3",
+      "scope": "required",
+      "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+      "description": "Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a better user experience.",
+      "purl": "pkg:npm/is-glob@4.0.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/micromatch/is-glob"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/micromatch/is-glob/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c5e9526b21c7dfa66013b6568658bba56df884d6cd97c3a3bf92959a4243e2105d0f7b61f137e4f6f61ab0b33e99758e6611648197f184b4a7af046be1e9524a"
         }
       ],
       "licenses": [
@@ -1872,6 +4838,84 @@
       ]
     },
     {
+      "bom-ref": "js-yaml@4.3.2",
+      "type": "library",
+      "name": "js-yaml",
+      "version": "4.3.2",
+      "scope": "required",
+      "author": "Vladimir Zapparov <dervus.grim@gmail.com>",
+      "description": "YAML 1.2 parser and serializer",
+      "purl": "pkg:npm/js-yaml@4.3.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.2.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "48534ebd227e0e07fff409fdd38631f828129483c2908a5aa38aa8e7596979edb94c845e8dd1f7ae1478119306a0dc77fd33f73bec335ae893165e2ca9b96dcc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "json-buffer@3.0.1",
+      "type": "library",
+      "name": "json-buffer",
+      "version": "3.0.1",
+      "scope": "required",
+      "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+      "description": "JSON parse & stringify that supports binary via bops & base64",
+      "purl": "pkg:npm/json-buffer@3.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/json-buffer/-/json-buffer-3.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/dominictarr/json-buffer.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/dominictarr/json-buffer"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e1b57905f4769aa7d04c99be579b4f3dd7fe669ba1888bd3b8007983c91cad7399a534ff430c15456072c17d68cebea512e3dd6c7c70689966f46ea6236b1f49"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "json-schema-traverse@1.0.0",
       "type": "library",
       "name": "json-schema-traverse",
@@ -1947,6 +4991,213 @@
         {
           "license": {
             "id": "BSD-2-Clause"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "json-stable-stringify-without-jsonify@1.0.1",
+      "type": "library",
+      "name": "json-stable-stringify-without-jsonify",
+      "version": "1.0.1",
+      "scope": "required",
+      "author": "James Halliday",
+      "description": "deterministic JSON.stringify() with custom sorting to get deterministic hashes from stringified results, with no public domain dependencies",
+      "purl": "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/samn/json-stable-stringify.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/samn/json-stable-stringify"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "05d6e8cbe97bb40dce196e858f21475a43f92ee0728f54e4df72e3caad1ac72cdd93dfff2528b6bb77cfd504a677528dc2ae9538a606940bbcec28ac562afa3f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "keyv@4.5.4",
+      "type": "library",
+      "name": "keyv",
+      "version": "4.5.4",
+      "scope": "required",
+      "author": "Jared Wray <me@jaredwray.com> (http://jaredwray.com)",
+      "description": "Simple key-value storage with support for multiple backends",
+      "purl": "pkg:npm/keyv@4.5.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/keyv/-/keyv-4.5.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jaredwray/keyv.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jaredwray/keyv"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/jaredwray/keyv/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a3154790747f1097f608d5e75b144b5ba9a0ec9c82094706d03b441a62f672d528d4f3538a7d4f52297eafffb8af93295600bf7e7d648ecc7b9a34ae8caa88a7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "levn@0.4.1",
+      "type": "library",
+      "name": "levn",
+      "version": "0.4.1",
+      "scope": "required",
+      "author": "George Zahariev <z@georgezahariev.com>",
+      "description": "Light ECMAScript (JavaScript) Value Notation - human written, concise, typed, flexible",
+      "purl": "pkg:npm/levn@0.4.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/levn/-/levn-0.4.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/gkz/levn.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/gkz/levn"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f9b4f6b87e04e4b184ee1fe7ddebdc4bfb109495c2a48a7aca6f0e589e5e57afbaec3b2a97f2da693eea24102ddabcdfa1aff94011818710e2c7574cb7691029"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "locate-path@6.0.0",
+      "type": "library",
+      "name": "locate-path",
+      "version": "6.0.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Get the first path that exists on disk of multiple paths",
+      "purl": "pkg:npm/locate-path@6.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "88f64ae9e6236f146edee078fd667712c10830914ca80a28a65dd1fb3baad148dc026fcc3ba282c1e0e03df3f77a54f3b6828fdcab67547c539f63470520d553"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "lodash.merge@4.6.2",
+      "type": "library",
+      "name": "lodash.merge",
+      "version": "4.6.2",
+      "scope": "required",
+      "author": "John-David Dalton <john.david.dalton@gmail.com>",
+      "description": "The Lodash method `_.merge` exported as a module.",
+      "purl": "pkg:npm/lodash.merge@4.6.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://lodash.com/"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "d0aa63a97455beb6320ac5f5b3047f5d32b4bdae9542440ce8c368ecfa96efb0728c086801103c11facfd4de3e2a52a3f184b46540ad453fd852e872603ba321"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
           }
         }
       ]
@@ -2111,6 +5362,45 @@
       ]
     },
     {
+      "bom-ref": "minimatch@3.1.5",
+      "type": "library",
+      "name": "minimatch",
+      "version": "3.1.5",
+      "scope": "required",
+      "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
+      "description": "a glob matcher in javascript",
+      "purl": "pkg:npm/minimatch@3.1.5",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/minimatch/-/minimatch-3.1.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/isaacs/minimatch.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5608d652c9e74fa9fe35493a799abbef37857695b62d60f33facc51ab09b1d789836e9790f3aa4d871d0e6e147d83356e576e9f3e8d5cda78db7de2cb04125e3"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "ms@2.1.3",
       "type": "library",
       "name": "ms",
@@ -2129,6 +5419,45 @@
         {
           "alg": "SHA-512",
           "content": "e85973b9b4cb646dc9d9afcd542025784863ceae68c601f268253dc985ef70bb2fa1568726afece715c8ebf5d73fab73ed1f7100eb479d23bfb57b45dd645394"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "natural-compare@1.4.0",
+      "type": "library",
+      "name": "natural-compare",
+      "version": "1.4.0",
+      "scope": "required",
+      "author": "Lauri Rooden (https://github.com/litejs/natural-compare-lite)",
+      "description": "Compare strings containing a mix of letters and numbers in the way a human being would in sort order.",
+      "purl": "pkg:npm/natural-compare@1.4.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/litejs/natural-compare-lite/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "396343f1e8b756d342f61ed5eb4a9f7f7495a1b1ebf7de824f0831b9b832418129836f7487d2746eec8408d3497b19059b9b0e6a38791b5d7a45803573c64c4b"
         }
       ],
       "licenses": [
@@ -2300,6 +5629,154 @@
       ]
     },
     {
+      "bom-ref": "optionator@0.9.4",
+      "type": "library",
+      "name": "optionator",
+      "version": "0.9.4",
+      "scope": "required",
+      "author": "George Zahariev <z@georgezahariev.com>",
+      "description": "option parsing and help generation",
+      "purl": "pkg:npm/optionator@0.9.4",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/optionator/-/optionator-0.9.4.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/gkz/optionator.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/gkz/optionator"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e88a50ee6294c5171934b20e6d1d21cfb971b1aa5248860d649c173c6785d264d5a862852178f50d070ca13db64b744e70bc98febcf43d669667d6b25a669df6"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "p-limit@3.1.0",
+      "type": "library",
+      "name": "p-limit",
+      "version": "3.1.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Run multiple promise-returning & async functions with limited concurrency",
+      "purl": "pkg:npm/p-limit@3.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/p-limit/-/p-limit-3.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4d839a9ccdf01b0346b193767154d83c0af0e39e319d78f9aa6585d5b12801ce3e714fe897b19587ba1d7af8e9d4534776e1dcdca64c70576ec54e5773ab8945"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "p-locate@5.0.0",
+      "type": "library",
+      "name": "p-locate",
+      "version": "5.0.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Get the first fulfilled promise that satisfies the provided testing function",
+      "purl": "pkg:npm/p-locate@5.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/p-locate/-/p-locate-5.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2da363b51594058fbecc1e6713f37071aa0cca548f93e4be647341d53cdd6cc24c9f2e9dca7a401aded7fed97f418ab74c8784ea7c47a696e8d8b1b29ab1b93f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "parent-module@1.0.1",
+      "type": "library",
+      "name": "parent-module",
+      "version": "1.0.1",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Get the path of the parent module",
+      "purl": "pkg:npm/parent-module@1.0.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/parent-module/-/parent-module-1.0.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "190d84591a5057cfe8f80c3c62ab5f6593df3515996246e2744f64e6ba65fe10b7bed1c705f1a6d887e2eaa595f9ca031a4ad42990311372e8b7991cb11961fa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "parseurl@1.3.3",
       "type": "library",
       "name": "parseurl",
@@ -2318,6 +5795,41 @@
         {
           "alg": "SHA-512",
           "content": "0a2c9e3b1153fc96723799b4cfd3df5f0e1208127a4b2833d43a65d30aa39610c418604fd469ec51510bd29eb78681b57dc8f77c7ca75e2f4d60ee2758e2fea9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "path-exists@4.0.0",
+      "type": "library",
+      "name": "path-exists",
+      "version": "4.0.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Check if a path exists",
+      "purl": "pkg:npm/path-exists@4.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/path-exists/-/path-exists-4.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "6a4f50cb943b8d86f65b071ecb9169be0d8aa0073f64884b48b392066466ca03ec1b091556dd1f65ad2aaed333fa6ead2530077d943c167981e0c1b82d6cbbff"
         }
       ],
       "licenses": [
@@ -2392,6 +5904,49 @@
       ]
     },
     {
+      "bom-ref": "picomatch@4.0.7",
+      "type": "library",
+      "name": "picomatch",
+      "version": "4.0.7",
+      "scope": "required",
+      "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+      "description": "Blazing fast and accurate glob matcher written in JavaScript, with no dependencies and full support for standard and extended Bash glob features, including braces, extglobs, POSIX brackets, and regular expressions.",
+      "purl": "pkg:npm/picomatch@4.0.7",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/micromatch/picomatch"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/micromatch/picomatch/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a9c26ef3c436216a89b030f9dbd24a31dc069bf76f2275b81ef427470887f49b62849bf318eb1c0ed1c4df1d6904a794393cac43c91598b9c9da426eef285c18"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "pkce-challenge@5.0.1",
       "type": "library",
       "name": "pkce-challenge",
@@ -2434,25 +5989,38 @@
       ]
     },
     {
-      "bom-ref": "proxy-addr@2.0.7",
+      "bom-ref": "prelude-ls@1.2.1",
       "type": "library",
-      "name": "proxy-addr",
-      "version": "2.0.7",
+      "name": "prelude-ls",
+      "version": "1.2.1",
       "scope": "required",
-      "author": "Douglas Christopher Wilson <doug@somethingdoug.com>",
-      "description": "Determine address of proxied request",
-      "purl": "pkg:npm/proxy-addr@2.0.7",
-      "properties": [],
+      "author": "George Zahariev <z@georgezahariev.com>",
+      "description": "prelude.ls is a functionally oriented utility library. It is powerful and flexible. Almost all of its functions are curried. It is written in, and is the recommended base library for, LiveScript.",
+      "purl": "pkg:npm/prelude-ls@1.2.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz"
+          "url": "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/gkz/prelude-ls.git"
+        },
+        {
+          "type": "website",
+          "url": "http://preludels.com"
         }
       ],
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "96542c30b4940d43d3e388ddad4fcedfbaa59e27e2b433fe670ae699972848ac8b2afb59c69c95d27dbf6c3fcde2d040019fe024475953b28cadaa0ad7e5d802"
+          "content": "be47033eb459a354192db9f944b18fa60fd698843ae6aa165a170629ffdbe5ea659246ab5f49bdcfca6909ab789a53aa52c5a9c8db9880edd5472ad81d2cd7e6"
         }
       ],
       "licenses": [
@@ -2464,18 +6032,91 @@
       ]
     },
     {
-      "bom-ref": "qs@6.16.0",
+      "bom-ref": "proxy-addr@2.0.8",
       "type": "library",
-      "name": "qs",
-      "version": "6.16.0",
+      "name": "proxy-addr",
+      "version": "2.0.8",
       "scope": "required",
-      "description": "A querystring parser that supports nesting and arrays, with a depth limit",
-      "purl": "pkg:npm/qs@6.16.0",
+      "author": "Douglas Christopher Wilson <doug@somethingdoug.com>",
+      "description": "Determine address of proxied request",
+      "purl": "pkg:npm/proxy-addr@2.0.8",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/qs/-/qs-6.16.0.tgz"
+          "url": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.8.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e679f1d321b2554718eadf519d6700456b704fd1750fc3bdaedd3c86d3ef9dde3d5b522066d98b921bbd59f333423d5c1718c720ee9ca279d43555b993b015c9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "punycode@2.3.1",
+      "type": "library",
+      "name": "punycode",
+      "version": "2.3.1",
+      "scope": "required",
+      "author": "Mathias Bynens",
+      "description": "A robust Punycode converter that fully complies to RFC 3492 and RFC 5891, and works on nearly all JavaScript platforms.",
+      "purl": "pkg:npm/punycode@2.3.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/mathiasbynens/punycode.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://mths.be/punycode"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "bd8b7b503d54f5683ad77f2c84bb4b3af740bbef03b02fe2945b44547707fb0c9d712a4d136d007d239db9fe8c91115a84be4563b5f5a14ee7295645b5fabc16"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "qs@6.17.1",
+      "type": "library",
+      "name": "qs",
+      "version": "6.17.1",
+      "scope": "required",
+      "description": "A querystring parser that supports nesting and arrays, with a depth limit",
+      "purl": "pkg:npm/qs@6.17.1",
+      "properties": [],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/qs/-/qs-6.17.1.tgz"
         },
         {
           "type": "vcs",
@@ -2489,7 +6130,7 @@
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "87a7e1388691ac80f609b118d9faacfbbb7e517668f8c2c09d4e60448abce6e16d76250f09db00a4c947857a202953381ccd8355b22318d4d3607d8e7263f5bc"
+          "content": "8dddc23a468a5601945be647c841c21bd6c7ed1a1a6a25ae320cec2018d43158cb01a5865a9a14015c258d5bc11f146eff6a841e769d2c666b92eb585013d024"
         }
       ],
       "licenses": [
@@ -2591,6 +6232,41 @@
       ]
     },
     {
+      "bom-ref": "resolve-from@4.0.0",
+      "type": "library",
+      "name": "resolve-from",
+      "version": "4.0.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Resolve the path of a module like `require.resolve()` but from a given path",
+      "purl": "pkg:npm/resolve-from@4.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/resolve-from/-/resolve-from-4.0.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "a5bfcc6265ecb40932b11171f2988d235b4614d408140def904dc6ab812e035745ea01e9ffebe066ab021896a9bf2f0ddd0fb8a3b170beab8f25c9d9ed1632e2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "router@2.2.0",
       "type": "library",
       "name": "router",
@@ -2654,6 +6330,45 @@
         {
           "license": {
             "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "semver@7.8.5",
+      "type": "library",
+      "name": "semver",
+      "version": "7.8.5",
+      "scope": "required",
+      "author": "GitHub Inc.",
+      "description": "The semantic version parser used by npm.",
+      "purl": "pkg:npm/semver@7.8.5",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/semver/-/semver-7.8.5.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/npm/node-semver.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "63bfca0ec6fc2e3a28669c1aa86cae94ee8342592c8029dc7211c693eb19218e1206f52870c044147e54af57c8e1d57e26f974c3a723bee71a222e34a6e462a0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
           }
         }
       ]
@@ -3018,6 +6733,123 @@
       ]
     },
     {
+      "bom-ref": "strip-json-comments@3.1.1",
+      "type": "library",
+      "name": "strip-json-comments",
+      "version": "3.1.1",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "purl": "pkg:npm/strip-json-comments@3.1.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "e9f3dcf91e22870a8fe8dfda22fd9fd60307f25395b56407a2a0b8c8aea8483555a1cba602c7c2aa39179ea89832198cc12fe61072e9ed57a196ddea97a9448a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "supports-color@7.2.0",
+      "type": "library",
+      "name": "supports-color",
+      "version": "7.2.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Detect whether a terminal supports color",
+      "purl": "pkg:npm/supports-color@7.2.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "aa9080bd197db2db8e1ef78ab27ec79dc251befe74d6a21a70acd094effe2f0c5cf7ed2adb02f2bf80dfbedf34fc33e7da9a8e06c25d0e2a205c647df8ebf047"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "tinyglobby@0.2.17",
+      "type": "library",
+      "name": "tinyglobby",
+      "version": "0.2.17",
+      "scope": "required",
+      "author": "Superchupu",
+      "description": "A fast and minimal alternative to globby and fast-glob",
+      "purl": "pkg:npm/tinyglobby@0.2.17",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/SuperchupuDev/tinyglobby.git"
+        },
+        {
+          "type": "website",
+          "url": "https://superchupu.dev/tinyglobby"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/SuperchupuDev/tinyglobby/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "c1747f758a5ca8a99f5a911d66388a24ec023459dd0f40cc9eb5bf7188d51adb449017d581c2c51e836b963e3b9a339589cf72c8dbbae5a96c805e0d4324dada"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "toidentifier@1.0.1",
       "type": "library",
       "name": "toidentifier",
@@ -3037,6 +6869,88 @@
         {
           "alg": "SHA-512",
           "content": "a39b123ca12483f0c840d987e37574fee7ab2eba7355e764521f2d18dbda797a5fa6ec2329e9e54a8c7fd8efc14e5654b447be246eece58844cfad3c3e500744"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "ts-api-utils@2.5.0",
+      "type": "library",
+      "name": "ts-api-utils",
+      "version": "2.5.0",
+      "scope": "required",
+      "author": "JoshuaKGoldberg",
+      "description": "Utility functions for working with TypeScript's API. Successor to the wonderful tsutils. 🛠️️",
+      "purl": "pkg:npm/ts-api-utils@2.5.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/ts-api-utils/-/ts-api-utils-2.5.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/JoshuaKGoldberg/ts-api-utils"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "389fe26f184f96aacc33452234727fd02290928285db8dff0049a996ddeaa518245bc546ec87ce4b8d61ed5f138c84ea741c87ceb8dc4bfdac8becb894887c34"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "type-check@0.4.0",
+      "type": "library",
+      "name": "type-check",
+      "version": "0.4.0",
+      "scope": "required",
+      "author": "George Zahariev <z@georgezahariev.com>",
+      "description": "type-check allows you to check the types of JavaScript values at runtime with a Haskell like type syntax.",
+      "purl": "pkg:npm/type-check@0.4.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/type-check/-/type-check-0.4.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/gkz/type-check.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/gkz/type-check"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "5e5794a1cf6ec065ea8d6c176944d9026ccc705679f39f10036befc7552be7121c8b15c83fef0b9c50e0469954df4bacead7aa765b2415fbbe69ee0aefd3a87b"
         }
       ],
       "licenses": [
@@ -3124,6 +7038,52 @@
       ]
     },
     {
+      "bom-ref": "typescript-eslint@8.70.1",
+      "type": "library",
+      "name": "typescript-eslint",
+      "version": "8.70.1",
+      "scope": "required",
+      "description": "Tooling which enables you to use TypeScript with ESLint",
+      "purl": "pkg:npm/typescript-eslint@8.70.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.70.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/typescript-eslint/typescript-eslint.git"
+        },
+        {
+          "type": "website",
+          "url": "https://typescript-eslint.io/packages/typescript-eslint"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/typescript-eslint/typescript-eslint/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "01c586eca0e36764c7357b20c2db4c6869b3562d1515194561fa851d84116c3a45de8c2e61bba22fc73b514addda4f2cdcfa127c842b59fac65df70496b58b60"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "undici-types@6.21.0",
       "type": "library",
       "name": "undici-types",
@@ -3200,6 +7160,53 @@
       ]
     },
     {
+      "bom-ref": "uri-js@4.4.1",
+      "type": "library",
+      "name": "uri-js",
+      "version": "4.4.1",
+      "scope": "required",
+      "author": "Gary Court <gary.court@gmail.com>",
+      "description": "An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.",
+      "purl": "pkg:npm/uri-js@4.4.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "http://github.com/garycourt/uri-js"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/garycourt/uri-js"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/garycourt/uri-js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "eeb294cb2df7435c9cf7ca50d430262edc17d74f45ed321f5a55b561da3c5a5d628b549e1e279e8741c77cf78bd9f3172bacf4b3c79c2acf5fac2b8b26f9dd06"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "vary@1.1.2",
       "type": "library",
       "name": "vary",
@@ -3264,6 +7271,49 @@
       ]
     },
     {
+      "bom-ref": "word-wrap@1.2.5",
+      "type": "library",
+      "name": "word-wrap",
+      "version": "1.2.5",
+      "scope": "required",
+      "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+      "description": "Wrap words to a specified length.",
+      "purl": "pkg:npm/word-wrap@1.2.5",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.5.tgz"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/jonschlinkert/word-wrap"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/jonschlinkert/word-wrap/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "04ddb607979a30c23d50cb63ac677983978260fa423c3532d052576d8b1a4f9cd8c6314e7244b9dd2403137a56915a16a475d56f706b61c10de13c1ae7907970"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "wrappy@1.0.2",
       "type": "library",
       "name": "wrappy",
@@ -3306,19 +7356,54 @@
       ]
     },
     {
-      "bom-ref": "zod@4.5.4",
+      "bom-ref": "yocto-queue@0.1.0",
+      "type": "library",
+      "name": "yocto-queue",
+      "version": "0.1.0",
+      "scope": "required",
+      "author": "Sindre Sorhus",
+      "description": "Tiny queue data structure",
+      "purl": "pkg:npm/yocto-queue@0.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "ad592cbec9cd09d27fa2119ceb180fc3237c7a1782c6c88b33c9b1b84fedfe6395a897b03ee3b59a22e94c74224604ca08b7b12f831e00555a82db3b1e6359d9"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "zod@4.6.7",
       "type": "library",
       "name": "zod",
-      "version": "4.5.4",
+      "version": "4.6.7",
       "scope": "required",
       "author": "Colin McDonnell <zod@colinhacks.com>",
       "description": "TypeScript-first schema declaration and validation library with static type inference",
-      "purl": "pkg:npm/zod@4.5.4",
+      "purl": "pkg:npm/zod@4.6.7",
       "properties": [],
       "externalReferences": [
         {
           "type": "distribution",
-          "url": "https://registry.npmjs.org/zod/-/zod-4.5.4.tgz"
+          "url": "https://registry.npmjs.org/zod/-/zod-4.6.7.tgz"
         },
         {
           "type": "vcs",
@@ -3336,7 +7421,7 @@
       "hashes": [
         {
           "alg": "SHA-512",
-          "content": "b02f79b53e621c71fd82da63e80f35921f8d11a44050537eaa550f0d46d17ce32f35fe50081aac6f75a0be7a55b4ae58fb851f03a2aab9fa2db93bcc1a24e5b0"
+          "content": "83c5b60f6914e9af2e9ed734e777d7d6e5412b333bcaa0315bfdf3c24f37fba472176f9228eb95f9cd30043854c335753da19aa66647fab99c5333dffb7086c2"
         }
       ],
       "licenses": [
@@ -3386,21 +7471,128 @@
     {
       "ref": "@adi-internal/mcp-dataiku-hardened@0.1.0",
       "dependsOn": [
-        "@modelcontextprotocol/sdk@1.30.0",
+        "@modelcontextprotocol/sdk@1.32.2",
+        "zod@4.6.7",
+        "@eslint/js@9.39.5",
         "@types/node@22.15.30",
-        "typescript@5.8.3"
+        "eslint@9.39.5",
+        "typescript@5.8.3",
+        "typescript-eslint@8.70.1"
       ]
     },
     {
-      "ref": "@hono/node-server@2.1.1",
+      "ref": "@eslint-community/eslint-utils@4.10.1",
       "dependsOn": [
-        "hono@4.13.5"
+        "eslint@9.39.5",
+        "eslint-visitor-keys@3.4.3"
       ]
     },
     {
-      "ref": "@modelcontextprotocol/sdk@1.30.0",
+      "ref": "eslint-visitor-keys@3.4.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "@eslint-community/regexpp@4.12.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "@eslint/config-array@0.21.2",
       "dependsOn": [
-        "@hono/node-server@2.1.1",
+        "@eslint/object-schema@2.1.7",
+        "debug@4.4.3",
+        "minimatch@3.1.5"
+      ]
+    },
+    {
+      "ref": "@eslint/config-helpers@0.4.2",
+      "dependsOn": [
+        "@eslint/core@0.17.0"
+      ]
+    },
+    {
+      "ref": "@eslint/core@0.17.0",
+      "dependsOn": [
+        "@types/json-schema@7.0.15"
+      ]
+    },
+    {
+      "ref": "@eslint/eslintrc@3.3.7",
+      "dependsOn": [
+        "ajv@6.15.0",
+        "debug@4.4.3",
+        "espree@10.4.0",
+        "globals@14.0.0",
+        "ignore@5.3.2",
+        "import-fresh@3.3.1",
+        "js-yaml@4.3.2",
+        "minimatch@3.1.5",
+        "strip-json-comments@3.1.1"
+      ]
+    },
+    {
+      "ref": "ajv@6.15.0",
+      "dependsOn": [
+        "fast-deep-equal@3.1.3",
+        "fast-json-stable-stringify@2.1.0",
+        "json-schema-traverse@0.4.1",
+        "uri-js@4.4.1"
+      ]
+    },
+    {
+      "ref": "json-schema-traverse@0.4.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "@eslint/js@9.39.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "@eslint/object-schema@2.1.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "@eslint/plugin-kit@0.4.1",
+      "dependsOn": [
+        "@eslint/core@0.17.0",
+        "levn@0.4.1"
+      ]
+    },
+    {
+      "ref": "@hono/node-server@2.1.6",
+      "dependsOn": [
+        "hono@4.13.16"
+      ]
+    },
+    {
+      "ref": "@humanfs/core@0.19.2",
+      "dependsOn": [
+        "@humanfs/types@0.15.0"
+      ]
+    },
+    {
+      "ref": "@humanfs/node@0.16.8",
+      "dependsOn": [
+        "@humanwhocodes/retry@0.4.3",
+        "@humanfs/core@0.19.2",
+        "@humanfs/types@0.15.0"
+      ]
+    },
+    {
+      "ref": "@humanfs/types@0.15.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "@humanwhocodes/module-importer@1.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "@humanwhocodes/retry@0.4.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "@modelcontextprotocol/sdk@1.32.2",
+      "dependsOn": [
+        "@hono/node-server@2.1.6",
         "ajv@8.20.0",
         "ajv-formats@3.0.1",
         "content-type@1.0.5",
@@ -3410,20 +7602,151 @@
         "eventsource-parser@3.1.1",
         "express@5.2.1",
         "express-rate-limit@8.7.0",
-        "hono@4.13.5",
+        "hono@4.13.16",
         "jose@6.2.10",
         "json-schema-typed@8.0.2",
         "pkce-challenge@5.0.1",
         "raw-body@3.0.2",
-        "zod@4.5.4",
+        "zod@4.6.7",
         "zod-to-json-schema@3.25.2"
       ]
+    },
+    {
+      "ref": "@types/estree@1.0.9",
+      "dependsOn": []
+    },
+    {
+      "ref": "@types/json-schema@7.0.15",
+      "dependsOn": []
     },
     {
       "ref": "@types/node@22.15.30",
       "dependsOn": [
         "undici-types@6.21.0"
       ]
+    },
+    {
+      "ref": "@typescript-eslint/eslint-plugin@8.70.1",
+      "dependsOn": [
+        "@typescript-eslint/parser@8.70.1",
+        "eslint@9.39.5",
+        "typescript@5.8.3",
+        "@eslint-community/regexpp@4.12.2",
+        "@typescript-eslint/scope-manager@8.70.1",
+        "@typescript-eslint/type-utils@8.70.1",
+        "@typescript-eslint/utils@8.70.1",
+        "@typescript-eslint/visitor-keys@8.70.1",
+        "ignore@7.0.10",
+        "natural-compare@1.4.0",
+        "ts-api-utils@2.5.0"
+      ]
+    },
+    {
+      "ref": "ignore@7.0.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "@typescript-eslint/parser@8.70.1",
+      "dependsOn": [
+        "eslint@9.39.5",
+        "typescript@5.8.3",
+        "@typescript-eslint/scope-manager@8.70.1",
+        "@typescript-eslint/types@8.70.1",
+        "@typescript-eslint/typescript-estree@8.70.1",
+        "@typescript-eslint/visitor-keys@8.70.1",
+        "debug@4.4.3"
+      ]
+    },
+    {
+      "ref": "@typescript-eslint/project-service@8.70.1",
+      "dependsOn": [
+        "typescript@5.8.3",
+        "@typescript-eslint/tsconfig-utils@8.70.1",
+        "@typescript-eslint/types@8.70.1",
+        "debug@4.4.3"
+      ]
+    },
+    {
+      "ref": "@typescript-eslint/scope-manager@8.70.1",
+      "dependsOn": [
+        "@typescript-eslint/types@8.70.1",
+        "@typescript-eslint/visitor-keys@8.70.1"
+      ]
+    },
+    {
+      "ref": "@typescript-eslint/tsconfig-utils@8.70.1",
+      "dependsOn": [
+        "typescript@5.8.3"
+      ]
+    },
+    {
+      "ref": "@typescript-eslint/type-utils@8.70.1",
+      "dependsOn": [
+        "eslint@9.39.5",
+        "typescript@5.8.3",
+        "@typescript-eslint/types@8.70.1",
+        "@typescript-eslint/typescript-estree@8.70.1",
+        "@typescript-eslint/utils@8.70.1",
+        "debug@4.4.3",
+        "ts-api-utils@2.5.0"
+      ]
+    },
+    {
+      "ref": "@typescript-eslint/types@8.70.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "@typescript-eslint/typescript-estree@8.70.1",
+      "dependsOn": [
+        "typescript@5.8.3",
+        "@typescript-eslint/project-service@8.70.1",
+        "@typescript-eslint/tsconfig-utils@8.70.1",
+        "@typescript-eslint/types@8.70.1",
+        "@typescript-eslint/visitor-keys@8.70.1",
+        "debug@4.4.3",
+        "minimatch@10.2.6",
+        "semver@7.8.5",
+        "tinyglobby@0.2.17",
+        "ts-api-utils@2.5.0"
+      ]
+    },
+    {
+      "ref": "balanced-match@4.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "brace-expansion@5.0.12",
+      "dependsOn": [
+        "balanced-match@4.0.4"
+      ]
+    },
+    {
+      "ref": "minimatch@10.2.6",
+      "dependsOn": [
+        "brace-expansion@5.0.12"
+      ]
+    },
+    {
+      "ref": "@typescript-eslint/utils@8.70.1",
+      "dependsOn": [
+        "eslint@9.39.5",
+        "typescript@5.8.3",
+        "@eslint-community/eslint-utils@4.10.1",
+        "@typescript-eslint/scope-manager@8.70.1",
+        "@typescript-eslint/types@8.70.1",
+        "@typescript-eslint/typescript-estree@8.70.1"
+      ]
+    },
+    {
+      "ref": "@typescript-eslint/visitor-keys@8.70.1",
+      "dependsOn": [
+        "@typescript-eslint/types@8.70.1",
+        "eslint-visitor-keys@5.0.1"
+      ]
+    },
+    {
+      "ref": "eslint-visitor-keys@5.0.1",
+      "dependsOn": []
     },
     {
       "ref": "accepts@2.0.0",
@@ -3433,10 +7756,20 @@
       ]
     },
     {
+      "ref": "acorn@8.18.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "acorn-jsx@5.3.2",
+      "dependsOn": [
+        "acorn@8.18.0"
+      ]
+    },
+    {
       "ref": "ajv@8.20.0",
       "dependsOn": [
         "fast-deep-equal@3.1.3",
-        "fast-uri@3.1.6",
+        "fast-uri@3.1.9",
         "json-schema-traverse@1.0.0",
         "require-from-string@2.0.2"
       ]
@@ -3448,7 +7781,21 @@
       ]
     },
     {
-      "ref": "body-parser@2.3.0",
+      "ref": "ansi-styles@4.3.0",
+      "dependsOn": [
+        "color-convert@2.0.1"
+      ]
+    },
+    {
+      "ref": "argparse@2.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "balanced-match@1.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "body-parser@2.4.0",
       "dependsOn": [
         "bytes@3.1.2",
         "content-type@2.1.0",
@@ -3456,7 +7803,7 @@
         "http-errors@2.0.1",
         "iconv-lite@0.7.3",
         "on-finished@2.4.1",
-        "qs@6.16.0",
+        "qs@6.17.1",
         "raw-body@3.0.2",
         "type-is@2.1.0"
       ]
@@ -3464,6 +7811,13 @@
     {
       "ref": "content-type@2.1.0",
       "dependsOn": []
+    },
+    {
+      "ref": "brace-expansion@1.1.21",
+      "dependsOn": [
+        "balanced-match@1.0.2",
+        "concat-map@0.0.1"
+      ]
     },
     {
       "ref": "bytes@3.1.2",
@@ -3482,6 +7836,31 @@
         "call-bind-apply-helpers@1.0.2",
         "get-intrinsic@1.3.0"
       ]
+    },
+    {
+      "ref": "callsites@3.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "chalk@4.1.2",
+      "dependsOn": [
+        "ansi-styles@4.3.0",
+        "supports-color@7.2.0"
+      ]
+    },
+    {
+      "ref": "color-convert@2.0.1",
+      "dependsOn": [
+        "color-name@1.1.4"
+      ]
+    },
+    {
+      "ref": "color-name@1.1.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "concat-map@0.0.1",
+      "dependsOn": []
     },
     {
       "ref": "content-disposition@1.1.0",
@@ -3519,6 +7898,10 @@
       "dependsOn": [
         "ms@2.1.3"
       ]
+    },
+    {
+      "ref": "deep-is@0.1.4",
+      "dependsOn": []
     },
     {
       "ref": "depd@2.0.0",
@@ -3559,6 +7942,88 @@
       "dependsOn": []
     },
     {
+      "ref": "escape-string-regexp@4.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "eslint@9.39.5",
+      "dependsOn": [
+        "@eslint-community/eslint-utils@4.10.1",
+        "@eslint-community/regexpp@4.12.2",
+        "@eslint/config-array@0.21.2",
+        "@eslint/config-helpers@0.4.2",
+        "@eslint/core@0.17.0",
+        "@eslint/eslintrc@3.3.7",
+        "@eslint/js@9.39.5",
+        "@eslint/plugin-kit@0.4.1",
+        "@humanfs/node@0.16.8",
+        "@humanwhocodes/module-importer@1.0.1",
+        "@humanwhocodes/retry@0.4.3",
+        "@types/estree@1.0.9",
+        "ajv@6.15.0",
+        "chalk@4.1.2",
+        "cross-spawn@7.0.6",
+        "debug@4.4.3",
+        "escape-string-regexp@4.0.0",
+        "eslint-scope@8.4.0",
+        "eslint-visitor-keys@4.2.1",
+        "espree@10.4.0",
+        "esquery@1.7.0",
+        "esutils@2.0.3",
+        "fast-deep-equal@3.1.3",
+        "file-entry-cache@8.0.0",
+        "find-up@5.0.0",
+        "glob-parent@6.0.2",
+        "ignore@5.3.2",
+        "imurmurhash@0.1.4",
+        "is-glob@4.0.3",
+        "json-stable-stringify-without-jsonify@1.0.1",
+        "lodash.merge@4.6.2",
+        "minimatch@3.1.5",
+        "natural-compare@1.4.0",
+        "optionator@0.9.4"
+      ]
+    },
+    {
+      "ref": "eslint-scope@8.4.0",
+      "dependsOn": [
+        "esrecurse@4.3.0",
+        "estraverse@5.3.0"
+      ]
+    },
+    {
+      "ref": "eslint-visitor-keys@4.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "espree@10.4.0",
+      "dependsOn": [
+        "acorn@8.18.0",
+        "acorn-jsx@5.3.2",
+        "eslint-visitor-keys@4.2.1"
+      ]
+    },
+    {
+      "ref": "esquery@1.7.0",
+      "dependsOn": [
+        "estraverse@5.3.0"
+      ]
+    },
+    {
+      "ref": "esrecurse@4.3.0",
+      "dependsOn": [
+        "estraverse@5.3.0"
+      ]
+    },
+    {
+      "ref": "estraverse@5.3.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "esutils@2.0.3",
+      "dependsOn": []
+    },
+    {
       "ref": "etag@1.8.1",
       "dependsOn": []
     },
@@ -3576,7 +8041,7 @@
       "ref": "express@5.2.1",
       "dependsOn": [
         "accepts@2.0.0",
-        "body-parser@2.3.0",
+        "body-parser@2.4.0",
         "content-disposition@1.1.0",
         "content-type@1.0.5",
         "cookie@0.7.2",
@@ -3594,8 +8059,8 @@
         "on-finished@2.4.1",
         "once@1.4.0",
         "parseurl@1.3.3",
-        "proxy-addr@2.0.7",
-        "qs@6.16.0",
+        "proxy-addr@2.0.8",
+        "qs@6.17.1",
         "range-parser@1.3.0",
         "router@2.2.0",
         "send@1.2.1",
@@ -3610,7 +8075,7 @@
       "dependsOn": [
         "express@5.2.1",
         "debug@4.4.3",
-        "ip-address@10.7.0"
+        "ip-address@10.7.5"
       ]
     },
     {
@@ -3618,8 +8083,28 @@
       "dependsOn": []
     },
     {
-      "ref": "fast-uri@3.1.6",
+      "ref": "fast-json-stable-stringify@2.1.0",
       "dependsOn": []
+    },
+    {
+      "ref": "fast-levenshtein@2.0.6",
+      "dependsOn": []
+    },
+    {
+      "ref": "fast-uri@3.1.9",
+      "dependsOn": []
+    },
+    {
+      "ref": "fdir@6.5.0",
+      "dependsOn": [
+        "picomatch@4.0.7"
+      ]
+    },
+    {
+      "ref": "file-entry-cache@8.0.0",
+      "dependsOn": [
+        "flat-cache@4.0.1"
+      ]
     },
     {
       "ref": "finalhandler@2.1.1",
@@ -3631,6 +8116,24 @@
         "parseurl@1.3.3",
         "statuses@2.0.2"
       ]
+    },
+    {
+      "ref": "find-up@5.0.0",
+      "dependsOn": [
+        "locate-path@6.0.0",
+        "path-exists@4.0.0"
+      ]
+    },
+    {
+      "ref": "flat-cache@4.0.1",
+      "dependsOn": [
+        "flatted@3.4.4",
+        "keyv@4.5.4"
+      ]
+    },
+    {
+      "ref": "flatted@3.4.4",
+      "dependsOn": []
     },
     {
       "ref": "forwarded@0.2.0",
@@ -3667,7 +8170,21 @@
       ]
     },
     {
+      "ref": "glob-parent@6.0.2",
+      "dependsOn": [
+        "is-glob@4.0.3"
+      ]
+    },
+    {
+      "ref": "globals@14.0.0",
+      "dependsOn": []
+    },
+    {
       "ref": "gopd@1.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "has-flag@4.0.0",
       "dependsOn": []
     },
     {
@@ -3681,7 +8198,7 @@
       ]
     },
     {
-      "ref": "hono@4.13.5",
+      "ref": "hono@4.13.16",
       "dependsOn": []
     },
     {
@@ -3701,16 +8218,41 @@
       ]
     },
     {
+      "ref": "ignore@5.3.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "import-fresh@3.3.1",
+      "dependsOn": [
+        "parent-module@1.0.1",
+        "resolve-from@4.0.0"
+      ]
+    },
+    {
+      "ref": "imurmurhash@0.1.4",
+      "dependsOn": []
+    },
+    {
       "ref": "inherits@2.0.4",
       "dependsOn": []
     },
     {
-      "ref": "ip-address@10.7.0",
+      "ref": "ip-address@10.7.5",
       "dependsOn": []
     },
     {
       "ref": "ipaddr.js@1.9.1",
       "dependsOn": []
+    },
+    {
+      "ref": "is-extglob@2.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "is-glob@4.0.3",
+      "dependsOn": [
+        "is-extglob@2.1.1"
+      ]
     },
     {
       "ref": "is-promise@4.0.0",
@@ -3725,11 +8267,48 @@
       "dependsOn": []
     },
     {
+      "ref": "js-yaml@4.3.2",
+      "dependsOn": [
+        "argparse@2.0.1"
+      ]
+    },
+    {
+      "ref": "json-buffer@3.0.1",
+      "dependsOn": []
+    },
+    {
       "ref": "json-schema-traverse@1.0.0",
       "dependsOn": []
     },
     {
       "ref": "json-schema-typed@8.0.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "json-stable-stringify-without-jsonify@1.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "keyv@4.5.4",
+      "dependsOn": [
+        "json-buffer@3.0.1"
+      ]
+    },
+    {
+      "ref": "levn@0.4.1",
+      "dependsOn": [
+        "prelude-ls@1.2.1",
+        "type-check@0.4.0"
+      ]
+    },
+    {
+      "ref": "locate-path@6.0.0",
+      "dependsOn": [
+        "p-locate@5.0.0"
+      ]
+    },
+    {
+      "ref": "lodash.merge@4.6.2",
       "dependsOn": []
     },
     {
@@ -3755,7 +8334,17 @@
       ]
     },
     {
+      "ref": "minimatch@3.1.5",
+      "dependsOn": [
+        "brace-expansion@1.1.21"
+      ]
+    },
+    {
       "ref": "ms@2.1.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "natural-compare@1.4.0",
       "dependsOn": []
     },
     {
@@ -3785,7 +8374,40 @@
       ]
     },
     {
+      "ref": "optionator@0.9.4",
+      "dependsOn": [
+        "prelude-ls@1.2.1",
+        "deep-is@0.1.4",
+        "word-wrap@1.2.5",
+        "type-check@0.4.0",
+        "levn@0.4.1",
+        "fast-levenshtein@2.0.6"
+      ]
+    },
+    {
+      "ref": "p-limit@3.1.0",
+      "dependsOn": [
+        "yocto-queue@0.1.0"
+      ]
+    },
+    {
+      "ref": "p-locate@5.0.0",
+      "dependsOn": [
+        "p-limit@3.1.0"
+      ]
+    },
+    {
+      "ref": "parent-module@1.0.1",
+      "dependsOn": [
+        "callsites@3.1.0"
+      ]
+    },
+    {
       "ref": "parseurl@1.3.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "path-exists@4.0.0",
       "dependsOn": []
     },
     {
@@ -3797,18 +8419,30 @@
       "dependsOn": []
     },
     {
+      "ref": "picomatch@4.0.7",
+      "dependsOn": []
+    },
+    {
       "ref": "pkce-challenge@5.0.1",
       "dependsOn": []
     },
     {
-      "ref": "proxy-addr@2.0.7",
+      "ref": "prelude-ls@1.2.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "proxy-addr@2.0.8",
       "dependsOn": [
         "forwarded@0.2.0",
         "ipaddr.js@1.9.1"
       ]
     },
     {
-      "ref": "qs@6.16.0",
+      "ref": "punycode@2.3.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "qs@6.17.1",
       "dependsOn": [
         "es-define-property@1.0.1",
         "side-channel@1.1.1"
@@ -3832,6 +8466,10 @@
       "dependsOn": []
     },
     {
+      "ref": "resolve-from@4.0.0",
+      "dependsOn": []
+    },
+    {
       "ref": "router@2.2.0",
       "dependsOn": [
         "debug@4.4.3",
@@ -3843,6 +8481,10 @@
     },
     {
       "ref": "safer-buffer@2.1.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "semver@7.8.5",
       "dependsOn": []
     },
     {
@@ -3925,8 +8567,37 @@
       "dependsOn": []
     },
     {
+      "ref": "strip-json-comments@3.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "supports-color@7.2.0",
+      "dependsOn": [
+        "has-flag@4.0.0"
+      ]
+    },
+    {
+      "ref": "tinyglobby@0.2.17",
+      "dependsOn": [
+        "fdir@6.5.0",
+        "picomatch@4.0.7"
+      ]
+    },
+    {
       "ref": "toidentifier@1.0.1",
       "dependsOn": []
+    },
+    {
+      "ref": "ts-api-utils@2.5.0",
+      "dependsOn": [
+        "typescript@5.8.3"
+      ]
+    },
+    {
+      "ref": "type-check@0.4.0",
+      "dependsOn": [
+        "prelude-ls@1.2.1"
+      ]
     },
     {
       "ref": "type-is@2.1.0",
@@ -3941,12 +8612,29 @@
       "dependsOn": []
     },
     {
+      "ref": "typescript-eslint@8.70.1",
+      "dependsOn": [
+        "eslint@9.39.5",
+        "typescript@5.8.3",
+        "@typescript-eslint/eslint-plugin@8.70.1",
+        "@typescript-eslint/parser@8.70.1",
+        "@typescript-eslint/typescript-estree@8.70.1",
+        "@typescript-eslint/utils@8.70.1"
+      ]
+    },
+    {
       "ref": "undici-types@6.21.0",
       "dependsOn": []
     },
     {
       "ref": "unpipe@1.0.0",
       "dependsOn": []
+    },
+    {
+      "ref": "uri-js@4.4.1",
+      "dependsOn": [
+        "punycode@2.3.1"
+      ]
     },
     {
       "ref": "vary@1.1.2",
@@ -3959,17 +8647,25 @@
       ]
     },
     {
+      "ref": "word-wrap@1.2.5",
+      "dependsOn": []
+    },
+    {
       "ref": "wrappy@1.0.2",
       "dependsOn": []
     },
     {
-      "ref": "zod@4.5.4",
+      "ref": "yocto-queue@0.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "zod@4.6.7",
       "dependsOn": []
     },
     {
       "ref": "zod-to-json-schema@3.25.2",
       "dependsOn": [
-        "zod@4.5.4"
+        "zod@4.6.7"
       ]
     }
   ]

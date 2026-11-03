@@ -1,0 +1,26 @@
+{
+  "project": "FCR_010",
+  "recipe": "compute_silver_alert_evidence_normalized",
+  "steps": [
+    {
+      "metaType": "PROCESSOR",
+      "type": "DateParser",
+      "params": {
+        "formats": [
+          "MM/dd/yy"
+        ],
+        "columns": [
+          "evidence_date"
+        ],
+        "timezone_id": "UTC",
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto",
+        "outType": {
+          "name": "out",
+          "type": "dateonly"
+        }
+      }
+    }
+  ],
+  "retrieved": "GET only; 2026-09-27"
+}

@@ -2,8 +2,8 @@
   "mcpServers": {
     "dataiku_factory": {
       "type": "stdio",
-      "command": "node",
-      "args": ["server-hardened/dist/mcp-server.js"],
+      "command": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": ["C:\\Users\\HEFRY ANESTI\\plugins\\dataiku\\server-hardened\\dist\\mcp-server.js"],
       "env_vars": ["DSS_HOST", "DSS_API_KEY", "DSS_INSECURE_TLS"]
     }
   }

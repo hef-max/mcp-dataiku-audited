@@ -12,6 +12,10 @@ This public repository contains the audited Dataiku DSS MCP integration used wit
 
 ## Build and audit
 
+The local `.mcp.json` is deliberately aligned with the installed plugin: Node.js at `C:\nvm4w\nodejs\node.exe` loads `C:\Users\HEFRY ANESTI\plugins\dataiku\server-hardened\dist\mcp-server.js`. These are workstation-specific paths. Editing this repository does not update that deployment until source is synchronized and TypeScript is rebuilt there. Existing running MCP processes must be reconnected to load the new module/schema.
+
+See [the visual recipe API guide](server-hardened/VISUAL_RECIPES.md) for supported configurations, safe template fallbacks and GET-only dry-run verification. No FCR_010 pipeline modification is needed to install this code.
+
 ```powershell
 cd server-hardened
 npm ci

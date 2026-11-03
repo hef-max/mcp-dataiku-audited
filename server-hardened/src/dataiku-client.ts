@@ -1,13 +1,26 @@
+import { FlowZoneService } from './flow-zone.js';
+import { InputReplacementService } from './input-replacement.js';
+import { randomUUID } from 'node:crypto';
+import { sampleRequestSchema, readTsvSample } from './dataset-sample.js';
+import { RecipeService } from './recipe-service.js';
+import { SchemaService } from './schema-service.js';
+import type { UpdateDatasetRequest } from './dataset-config.js';
+import { JobService, type BuildDatasetRequest, type RunRecipeRequest, type JobRequest } from './job-service.js';
+import { DatasetService } from './dataset-service.js';
+import type { CreateDatasetRequest } from './dataset-config.js';
+import { DssHttpError, readBody, parseSuccessBody } from './dss-error.js';
+import type { RecipeConfig } from './recipe-config.js';
 type QueryValue = string | number | boolean | undefined;
-type RequestOptions = { params?: Record<string, QueryValue> };
+type RequestOptions = { params?: Record<string, QueryValue>; timeoutMs?: number; responseType?: 'text'; sample?: { rows: number; width: number } };
 
 const DEFAULT_TIMEOUT_MS = 30_000;
 const MAX_RESPONSE_BYTES = 5 * 1024 * 1024;
 
-class SecureHttpClient {
+export class SecureHttpClient {
   constructor(
     private readonly baseUrl: URL,
     private readonly apiKey: string,
+    private readonly readOnly = false,
   ) {}
 
   private async request(
@@ -16,6 +29,7 @@ class SecureHttpClient {
     body?: unknown,
     options: RequestOptions = {},
   ): Promise<{ data: any }> {
+    if (this.readOnly && method !== 'GET') throw new Error('Read-only client rejects all non-GET requests');
     const cleanPath = relativePath.replace(/^\/+/, '');
     const url = new URL(cleanPath, this.baseUrl);
     for (const [key, value] of Object.entries(options.params ?? {})) {
@@ -27,7 +41,7 @@ class SecureHttpClient {
       response = await fetch(url, {
         method,
         redirect: 'error',
-        signal: AbortSignal.timeout(DEFAULT_TIMEOUT_MS),
+        signal: AbortSignal.timeout(Math.min(DEFAULT_TIMEOUT_MS, options.timeoutMs ?? DEFAULT_TIMEOUT_MS)),
         headers: {
           Authorization: `Bearer ${this.apiKey}`,
           Accept: 'application/json',
@@ -42,25 +56,46 @@ class SecureHttpClient {
       throw new Error('Unable to connect securely to Dataiku DSS');
     }
 
-    if (response.status === 401) throw new Error('Invalid Dataiku API key');
-    if (response.status === 403) throw new Error('Insufficient permissions for Dataiku operation');
-    if (response.status === 404) throw new Error('Dataiku resource not found');
-    if (!response.ok) throw new Error(`Dataiku API request failed with status ${response.status}`);
+    if (!response.ok) {
+      let body: unknown;
+      try {
+        if (/zip|octet-stream/i.test(response.headers.get('content-type') ?? '')) {
+          await response.body?.cancel(); body = '[Binary response body omitted]';
+        } else {
+          const raw = await readBody(response, 64 * 1024);
+          if (raw.startsWith('PK\u0003\u0004')) body = '[ZIP response body omitted]';
+          else { try { body = JSON.parse(raw); } catch { body = raw; } }
+        }
+      } catch { body = '[Response body omitted: unreadable or exceeds safe size limit]'; }
+      throw new DssHttpError(response.status, method, relativePath, body, this.apiKey);
+    }
 
+    if (options.sample) {
+      if (/html|json/i.test(response.headers.get('content-type') ?? '')) {
+        await response.body?.cancel();
+        throw new Error('DSS data endpoint returned a non-TSV response');
+      }
+      return { data: await readTsvSample(response, options.sample.rows, options.sample.width) };
+    }
+    if (/zip|octet-stream/i.test(response.headers.get('content-type') ?? '')) { await response.body?.cancel(); throw new Error('Binary DSS response omitted; use structured configuration tools or a dedicated archive download'); }
     const declaredLength = Number(response.headers.get('content-length') ?? 0);
     if (declaredLength > MAX_RESPONSE_BYTES) {
       throw new Error('Dataiku API response exceeded the configured size limit');
     }
 
-    const text = await response.text();
+    const text = await readBody(response, MAX_RESPONSE_BYTES);
     if (Buffer.byteLength(text, 'utf8') > MAX_RESPONSE_BYTES) {
       throw new Error('Dataiku API response exceeded the configured size limit');
     }
-    return { data: text.length === 0 ? null : JSON.parse(text) };
+    if (text.startsWith('PK\u0003\u0004')) throw new Error('ZIP archive omitted; binary content cannot be returned as text');
+    return { data: parseSuccessBody(response.status, method, relativePath, response.headers.get('content-type') ?? '', text, this.apiKey, options.responseType === 'text') };
   }
 
   get(path: string, options?: RequestOptions) {
     return this.request('GET', path, undefined, options);
+  }
+  getText(path: string, options?: RequestOptions) {
+    return this.request('GET', path, undefined, { ...options, responseType: 'text' });
   }
   post(path: string, body?: unknown) {
     return this.request('POST', path, body);
@@ -76,6 +111,7 @@ export interface DataikuConfig {
   host: string;
   apiKey: string;
   insecureTls?: boolean;
+  readOnly?: boolean;
 }
 
 export interface DatasetSchema {
@@ -96,13 +132,12 @@ export interface RecipeDefinition {
   type: string;
   name: string;
   inputs: string[];
-  outputs: Array<{
-    name: string;
-    new?: boolean;
-    connection?: string;
-  }>;
+  outputs: import('./recipe-config.js').RecipeOutput[];
   code?: string;
   params?: Record<string, any>;
+  config?: RecipeConfig;
+  dry_run?: boolean;
+  zone_id?: string; zone_name?: string; move_existing_outputs?: boolean;
 }
 
 export interface ScenarioDefinition {
@@ -159,7 +194,7 @@ export class DataikuClient {
       ? `${normalizedPath}/`
       : `${normalizedPath}/public/api/`;
 
-    this.client = new SecureHttpClient(host, this.config.apiKey);
+    this.client = new SecureHttpClient(host, this.config.apiKey, config?.readOnly ?? process.env.DSS_READ_ONLY === 'true');
   }
 
   // Project operations
@@ -177,9 +212,11 @@ export class DataikuClient {
     return response.data;
   }
 
-  async getProjectFlow(projectKey: string): Promise<any> {
-    const response = await this.client.get(`/projects/${projectKey}/flow/`);
-    return response.data;
+  async listFlowZones(input: unknown) { return new FlowZoneService(this.client).list(input); }
+  async getFlowObjectZone(input: unknown) { return new FlowZoneService(this.client).object(input); }
+  async moveFlowItems(input: unknown) { return new FlowZoneService(this.client).move(input); }
+  async getProjectFlow(projectKey: string, options: Record<string, unknown> = {}): Promise<any> {
+    return new FlowZoneService(this.client).flow({ ...options, project_key: projectKey });
   }
 
   // Dataset operations
@@ -193,19 +230,12 @@ export class DataikuClient {
     return response.data;
   }
 
-  async createDataset(projectKey: string, datasetName: string, datasetType: string, params: Record<string, any>): Promise<any> {
-    const data = {
-      name: datasetName,
-      type: datasetType,
-      params,
-    };
-    const response = await this.client.post(`/projects/${projectKey}/datasets/`, data);
-    return response.data;
+  async createDataset(request: CreateDatasetRequest): Promise<any> {
+    return new DatasetService(this.client).create(request);
   }
 
-  async updateDataset(projectKey: string, datasetName: string, updates: Record<string, any>): Promise<any> {
-    const response = await this.client.put(`/projects/${projectKey}/datasets/${datasetName}`, updates);
-    return response.data;
+  async updateDataset(request: UpdateDatasetRequest) {
+    return new SchemaService(this.client).update(request);
   }
 
   async deleteDataset(projectKey: string, datasetName: string, dropData: boolean = false): Promise<any> {
@@ -215,13 +245,8 @@ export class DataikuClient {
     return response.data;
   }
 
-  async buildDataset(projectKey: string, datasetName: string, options: { mode?: string; partition?: string } = {}): Promise<any> {
-    const data = {
-      type: 'RECURSIVE_BUILD',
-      ...options,
-    };
-    const response = await this.client.post(`/projects/${projectKey}/datasets/${datasetName}/actions/build`, data);
-    return response.data;
+  async buildDataset(request: BuildDatasetRequest) {
+    return new JobService(this.client, this.config.apiKey).build(request);
   }
 
   async getDatasetSchema(projectKey: string, datasetName: string): Promise<DatasetSchema> {
@@ -230,7 +255,7 @@ export class DataikuClient {
   }
 
   async getDatasetMetrics(projectKey: string, datasetName: string): Promise<DatasetMetrics> {
-    const response = await this.client.get(`/projects/${projectKey}/datasets/${datasetName}/metrics`);
+    const response = await this.client.get(`/projects/${projectKey}/datasets/${datasetName}/metrics/last/NP`);
     return response.data;
   }
 
@@ -249,12 +274,25 @@ export class DataikuClient {
   }
 
   async getDatasetSample(projectKey: string, datasetName: string, rows: number = 100, columns?: string[]): Promise<any> {
-    const params: Record<string, any> = { rows };
-    if (columns) {
-      params.columns = columns.join(',');
-    }
-    const response = await this.client.get(`/projects/${projectKey}/datasets/${datasetName}/sample`, { params });
-    return response.data;
+    const request = sampleRequestSchema.parse({ project_key: projectKey, dataset_name: datasetName, rows, columns });
+    const schema = await this.getDatasetSchema(request.project_key, request.dataset_name);
+    if (!Array.isArray(schema?.columns) || !schema.columns.length || schema.columns.some(c => typeof c.name !== 'string')) throw new Error('Invalid dataset schema for sample');
+    const names = schema.columns.map(c => c.name);
+    if (new Set(names).size !== names.length) throw new Error('Ambiguous dataset schema for sample');
+    const selected = request.columns ?? names;
+    if (selected.some(c => !names.includes(c))) throw new Error('Requested sample column is absent from dataset schema');
+    const readSessionId = randomUUID();
+    const root = `/projects/${request.project_key}/datasets/${request.dataset_name}`;
+    const response = await this.client.get(`${root}/data/`, { params: { format: 'tsv-excel-noheader', readSessionId },
+      sample: { rows: request.rows, width: names.length } });
+    // Official client checks stream errors after exhaustion. Early cancellation is
+    // deliberately not reported as full-stream validation or a complete dataset.
+    if (response.data.complete) await this.client.get(`${root}/finish-streaming/`, { params: { readSessionId } });
+    const indices = selected.map(c => names.indexOf(c));
+    return { ...response.data, columns: selected.map(name => schema.columns.find(c => c.name === name)),
+      rows: response.data.rows.map((row: string[]) => indices.map(i => row[i])),
+      sampling: 'HEAD', values_format: 'strings', max_rows: 1000, max_bytes: 1048576 };
+
   }
 
   // Recipe operations
@@ -269,8 +307,7 @@ export class DataikuClient {
   }
 
   async getRecipeInfo(projectKey: string, recipeName: string): Promise<any> {
-    const response = await this.client.get(`/projects/${projectKey}/recipes/${recipeName}/info`);
-    return response.data;
+    return new RecipeService(this.client).info(projectKey, recipeName);
   }
 
   async validateRecipeSyntax(projectKey: string, recipeName: string, code?: string): Promise<any> {
@@ -289,25 +326,21 @@ export class DataikuClient {
   }
 
   async createRecipe(projectKey: string, recipe: RecipeDefinition): Promise<any> {
-    const data = {
-      name: recipe.name,
-      type: recipe.type,
-      inputs: { main: { items: recipe.inputs.map(input => ({ ref: input })) } },
-      outputs: { main: { items: recipe.outputs.map(output => ({ ref: output.name, appendMode: false })) } },
-      script: recipe.params,
-    };
-
-    if (recipe.code) {
-      data.script = { ...data.script, code: recipe.code };
-    }
-
-    const response = await this.client.post(`/projects/${projectKey}/recipes/`, data);
-    return response.data;
+    if (recipe.params) throw new Error('Legacy params is unsupported; use typed config');
+    return new RecipeService(this.client).create({ project_key: projectKey, recipe_name: recipe.name,
+      recipe_type: recipe.type, inputs: recipe.inputs, outputs: recipe.outputs,
+      code: recipe.code, config: recipe.config, dry_run: recipe.dry_run, zone_id: recipe.zone_id, zone_name: recipe.zone_name, move_existing_outputs: recipe.move_existing_outputs });
   }
 
   async updateRecipe(projectKey: string, recipeName: string, updates: Record<string, any>): Promise<any> {
-    const response = await this.client.put(`/projects/${projectKey}/recipes/${recipeName}`, updates);
-    return response.data;
+    return new RecipeService(this.client).update({ ...updates, project_key: projectKey, recipe_name: recipeName });
+  }
+  async replaceVisualRecipeInput(request: unknown) {
+    return new InputReplacementService(this.client, this.config.apiKey).replace(request);
+  }
+
+  async repairRecipeConfiguration(request: unknown) {
+    return new RecipeService(this.client).repair(request);
   }
 
   async deleteRecipe(projectKey: string, recipeName: string): Promise<any> {
@@ -315,12 +348,8 @@ export class DataikuClient {
     return response.data;
   }
 
-  async runRecipe(projectKey: string, recipeName: string, buildMode?: string): Promise<any> {
-    const data = {
-      type: buildMode || 'RECURSIVE_BUILD',
-    };
-    const response = await this.client.post(`/projects/${projectKey}/recipes/${recipeName}/actions/build`, data);
-    return response.data;
+  async runRecipe(request: RunRecipeRequest) {
+    return new JobService(this.client, this.config.apiKey).runRecipe(request);
   }
 
   // Scenario operations
@@ -430,9 +459,20 @@ export class DataikuClient {
     return response.data;
   }
 
-  async getJobDetails(projectKey: string, jobId: string): Promise<JobInfo> {
-    const response = await this.client.get(`/projects/${projectKey}/jobs/${jobId}`);
-    return response.data;
+  async getJobDetails(projectKey: string, jobId: string) {
+    return new JobService(this.client, this.config.apiKey).details({ project_key: projectKey, job_id: jobId });
+  }
+
+  async getJobStatus(request: JobRequest) {
+    return new JobService(this.client, this.config.apiKey).status(request);
+  }
+
+  async waitForJob(request: JobRequest & { timeout_seconds?: number }) {
+    return new JobService(this.client, this.config.apiKey).wait(request);
+  }
+
+  async getJobLog(request: JobRequest & { activity_id?: string; max_chars?: number }) {
+    return new JobService(this.client, this.config.apiKey).log(request);
   }
 
   async cancelJob(projectKey: string, jobId: string): Promise<any> {
@@ -462,9 +502,10 @@ export class DataikuClient {
   }
 
   async exportProjectConfig(projectKey: string, format: 'json' | 'yaml' = 'json'): Promise<any> {
-    const params = { format };
-    const response = await this.client.get(`/projects/${projectKey}/export`, { params });
-    return response.data;
+    if (format !== 'json') throw new Error('Structured Flow configuration export supports JSON only; YAML/archive export is not provided by this read-only tool');
+    return { format: 'json', export_kind: 'flow_configuration_snapshot', archive_included: false,
+      configuration: await this.getProjectFlow(projectKey) };
+
   }
 
   async batchUpdateObjects(projectKey: string, objectType: string, pattern: string, updates: Record<string, any>): Promise<any> {

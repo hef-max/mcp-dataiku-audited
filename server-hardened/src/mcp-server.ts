@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+import { listZonesSchema, objectZoneSchema, moveFlowSchema, flowSchema } from './flow-zone.js';
+import { replaceInputSchema } from './input-replacement.js';
+import { sampleRequestSchema } from './dataset-sample.js';
+import { buildDatasetSchema, runRecipeSchema, jobStatusSchema, waitForJobSchema, jobLogSchema } from './job-service.js';
+import { createDatasetSchema, updateDatasetSchema, applyDatasetSchema } from './dataset-config.js';
+import { errorDetails, sanitize } from './dss-error.js';
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
@@ -8,6 +14,8 @@ import {
   Tool,
 } from '@modelcontextprotocol/sdk/types.js';
 import { DataikuClient } from './dataiku-client.js';
+import { z } from 'zod';
+import { createRecipeSchema, updateRecipeSchema, repairRecipeSchema, type RecipeConfig } from './recipe-config.js';
 
 /**
  * MCP Server for Dataiku DSS integration
@@ -38,67 +46,20 @@ export class DataikuMcpServer {
     this.server.setRequestHandler(ListToolsRequestSchema, async () => {
       return {
         tools: [
+          { name: 'replace_visual_recipe_input', description: 'Replace one schema-identical visual input in-place while preserving native mappings and transformations. Defaults to GET-only dry-run. No schema writes or builds.', inputSchema: z.toJSONSchema(replaceInputSchema, { io: 'input' }) as Tool['inputSchema'] },
+          { name: 'list_flow_zones', description: 'Read official DSS Flow zones, IDs, default status and owned object counts.', inputSchema: z.toJSONSchema(listZonesSchema, { io: 'input' }) as Tool['inputSchema'] },
+          { name: 'get_flow_object_zone', description: 'Verify a typed Flow object exists and return its owning zone.', inputSchema: z.toJSONSchema(objectZoneSchema, { io: 'input' }) as Tool['inputSchema'] },
+          { name: 'move_flow_items', description: 'Batch move Flow ownership. Defaults GET-only dry-run. Preflight all references and related recipe/outputs; actual mode verifies assignment and compensates failures.', inputSchema: z.toJSONSchema(moveFlowSchema, { io: 'input' }) as Tool['inputSchema'] },
           // Recipe Management Tools
           {
             name: 'create_recipe',
-            description: 'Create a new recipe in a Dataiku project',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-                recipe_type: {
-                  type: 'string',
-                  description: 'Type of recipe (e.g., python, sql, join)',
-                },
-                recipe_name: {
-                  type: 'string',
-                  description: 'Name for the new recipe',
-                },
-                inputs: {
-                  type: 'array',
-                  items: { type: 'string' },
-                  description: 'List of input dataset names',
-                },
-                outputs: {
-                  type: 'array',
-                  items: {
-                    type: 'object',
-                    properties: {
-                      name: { type: 'string' },
-                      new: { type: 'boolean' },
-                      connection: { type: 'string' },
-                    },
-                  },
-                  description: 'List of output dataset configurations',
-                },
-                code: {
-                  type: 'string',
-                  description: 'Optional code for the recipe',
-                },
-              },
-              required: ['project_key', 'recipe_type', 'recipe_name', 'inputs', 'outputs'],
-            },
+            description: 'Create code, visual, or Prompt recipes using existing unowned outputs. dry_run=true performs GET-only preflight. Prompt validates referenced input columns and saves a native DSS payload without invoking the LLM. Never builds data.',
+            inputSchema: z.toJSONSchema(createRecipeSchema, { io: 'input' }) as Tool['inputSchema'],
           },
           {
             name: 'update_recipe',
-            description: 'Update an existing recipe',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-                recipe_name: {
-                  type: 'string',
-                  description: 'Name of the recipe to update',
-                },
-              },
-              required: ['project_key', 'recipe_name'],
-            },
+            description: 'Update code or replace typed visual/Prompt configuration, preserving other settings. dry_run=true returns the proposed settings without saving. Never builds data or invokes an LLM.',
+            inputSchema: z.toJSONSchema(updateRecipeSchema, { io: 'input' }) as Tool['inputSchema'],
           },
           {
             name: 'delete_recipe',
@@ -119,71 +80,33 @@ export class DataikuMcpServer {
             },
           },
           {
-            name: 'run_recipe',
-            description: 'Run a recipe to build its outputs',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-                recipe_name: {
-                  type: 'string',
-                  description: 'Name of the recipe to run',
-                },
-                build_mode: {
-                  type: 'string',
-                  description: 'Optional build mode',
-                },
-              },
-              required: ['project_key', 'recipe_name'],
-            },
+            name: 'repair_recipe_configuration',
+            description: 'Repair existing visual or Prompt recipe payload with complete typed config; preserves I/O and schema, never builds or invokes an LLM.',
+            inputSchema: z.toJSONSchema(repairRecipeSchema, { io: 'input' }) as Tool['inputSchema'],
           },
+          {
+            name: 'run_recipe',
+            description: 'Build the unique recipe output via a DSS job. Defaults non-recursive and async. dry_run is GET-only.',
+            inputSchema: z.toJSONSchema(runRecipeSchema, { io: 'input' }) as Tool['inputSchema'],
+          },
+          { name: 'get_job_status', description: 'Read job state and sanitized failure diagnostics.', inputSchema: z.toJSONSchema(jobStatusSchema, { io: 'input' }) as Tool['inputSchema'] },
+          { name: 'wait_for_job', description: 'Wait for a job; timeout does not cancel or resubmit it.', inputSchema: z.toJSONSchema(waitForJobSchema, { io: 'input' }) as Tool['inputSchema'] },
+          { name: 'get_job_log', description: 'Get a bounded sanitized job or activity log excerpt.', inputSchema: z.toJSONSchema(jobLogSchema, { io: 'input' }) as Tool['inputSchema'] },
           // Dataset Management Tools
           {
             name: 'create_dataset',
-            description: 'Create a new dataset in a project',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-                dataset_name: {
-                  type: 'string',
-                  description: 'Name for the new dataset',
-                },
-                dataset_type: {
-                  type: 'string',
-                  description: 'Type of dataset (e.g., filesystem, sql)',
-                },
-                params: {
-                  type: 'object',
-                  description: 'Dataset configuration parameters',
-                },
-              },
-              required: ['project_key', 'dataset_name', 'dataset_type', 'params'],
-            },
+            description: 'Provision a managed S3/Filesystem dataset, optionally cloning storage settings. dry_run performs GET-only validation.',
+            inputSchema: z.toJSONSchema(createDatasetSchema, { io: 'input' }) as Tool['inputSchema'],
           },
           {
             name: 'update_dataset',
-            description: 'Update dataset settings',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-                dataset_name: {
-                  type: 'string',
-                  description: 'Name of the dataset to update',
-                },
-              },
-              required: ['project_key', 'dataset_name'],
-            },
+            description: 'Replace only an explicitly supplied dataset schema; preserve storage, metadata and producer. dry_run is GET-only; never builds.',
+            inputSchema: z.toJSONSchema(updateDatasetSchema, { io: 'input' }) as Tool['inputSchema'],
+          },
+          {
+            name: 'apply_dataset_schema',
+            description: 'Apply an explicit dataset schema with preflight, diff and read-back verification; never build or delete data.',
+            inputSchema: z.toJSONSchema(applyDatasetSchema, { io: 'input' }) as Tool['inputSchema'],
           },
           {
             name: 'delete_dataset',
@@ -209,29 +132,8 @@ export class DataikuMcpServer {
           },
           {
             name: 'build_dataset',
-            description: 'Build a dataset',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-                dataset_name: {
-                  type: 'string',
-                  description: 'Name of the dataset to build',
-                },
-                mode: {
-                  type: 'string',
-                  description: 'Optional build mode',
-                },
-                partition: {
-                  type: 'string',
-                  description: 'Optional partition specification',
-                },
-              },
-              required: ['project_key', 'dataset_name'],
-            },
+            description: 'Build an existing produced dataset via a DSS job. Defaults non-recursive and async. dry_run is GET-only.',
+            inputSchema: z.toJSONSchema(buildDatasetSchema, { io: 'input' }) as Tool['inputSchema'],
           },
           {
             name: 'inspect_dataset_schema',
@@ -393,45 +295,13 @@ export class DataikuMcpServer {
           },
           {
             name: 'get_project_flow',
-            description: 'Get complete data flow/pipeline structure',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-              },
-              required: ['project_key'],
-            },
+            description: 'Read official Flow graph with typed objects, dependency edges and zone assignments; bounded summary/detail.',
+            inputSchema: z.toJSONSchema(flowSchema, { io: 'input' }) as Tool['inputSchema'],
           },
           {
             name: 'get_dataset_sample',
-            description: 'Get sample data from datasets',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-                dataset_name: {
-                  type: 'string',
-                  description: 'Name of the dataset',
-                },
-                rows: {
-                  type: 'number',
-                  description: 'Number of sample rows',
-                  default: 100,
-                },
-                columns: {
-                  type: 'array',
-                  items: { type: 'string' },
-                  description: 'Specific columns to include',
-                },
-              },
-              required: ['project_key', 'dataset_name'],
-            },
+            description: 'Read bounded HEAD rows via official DSS data stream (1–1000 rows, 1 MiB). Validate columns before reading; values remain strings.',
+            inputSchema: z.toJSONSchema(sampleRequestSchema, { io: 'input' }) as Tool['inputSchema'],
           },
           {
             name: 'get_recent_runs',
@@ -925,22 +795,8 @@ export class DataikuMcpServer {
             },
           },
           {
-            name: 'get_project_flow',
-            description: 'Get complete data flow/pipeline structure',
-            inputSchema: {
-              type: 'object',
-              properties: {
-                project_key: {
-                  type: 'string',
-                  description: 'The project key',
-                },
-              },
-              required: ['project_key'],
-            },
-          },
-          {
             name: 'export_project_config',
-            description: 'Export project configuration as JSON/YAML',
+            description: 'Read a structured JSON Flow configuration snapshot (zones, objects, dependencies); not a full project archive.',
             inputSchema: {
               type: 'object',
               properties: {
@@ -950,7 +806,8 @@ export class DataikuMcpServer {
                 },
                 format: {
                   type: 'string',
-                  description: 'Export format (json/yaml)',
+                  description: 'Only json is supported; binary project archives are never returned as text.',
+                  enum: ['json'],
                   default: 'json',
                 },
               },
@@ -998,13 +855,22 @@ export class DataikuMcpServer {
         switch (name) {
           // Recipe Management
           case 'create_recipe':
+            createRecipeSchema.parse(args);
             result = await this.client.createRecipe(String(args.project_key), {
               name: String(args.recipe_name),
               type: String(args.recipe_type),
               inputs: args.inputs as string[],
               outputs: args.outputs as Array<{name: string; new?: boolean; connection?: string}>,
               code: args.code as string | undefined,
+              config: args.config as RecipeConfig | undefined,
+              dry_run: args.dry_run as boolean | undefined,
+              zone_id: args.zone_id as string | undefined, zone_name: args.zone_name as string | undefined,
+              move_existing_outputs: args.move_existing_outputs as boolean | undefined,
             });
+            break;
+
+          case 'replace_visual_recipe_input':
+            result = await this.client.replaceVisualRecipeInput(replaceInputSchema.parse(args));
             break;
 
           case 'update_recipe':
@@ -1016,23 +882,25 @@ export class DataikuMcpServer {
             result = await this.client.deleteRecipe(String(args.project_key), String(args.recipe_name));
             break;
 
+          case 'repair_recipe_configuration':
+            result = await this.client.repairRecipeConfiguration(repairRecipeSchema.parse(args));
+            break;
+
           case 'run_recipe':
-            result = await this.client.runRecipe(String(args.project_key), String(args.recipe_name), args.build_mode as string);
+            result = await this.client.runRecipe(runRecipeSchema.parse(args));
             break;
 
           // Dataset Management
           case 'create_dataset':
-            result = await this.client.createDataset(
-              String(args.project_key),
-              String(args.dataset_name),
-              String(args.dataset_type),
-              args.params as Record<string, any>
-            );
+            result = await this.client.createDataset(createDatasetSchema.parse(args));
             break;
 
           case 'update_dataset':
-            const { project_key: updateDatasetProjectKey, dataset_name: updateDatasetName, ...datasetUpdates } = args;
-            result = await this.client.updateDataset(String(updateDatasetProjectKey), String(updateDatasetName), datasetUpdates);
+            result = await this.client.updateDataset(updateDatasetSchema.parse(args));
+            break;
+
+          case 'apply_dataset_schema':
+            result = await this.client.updateDataset(applyDatasetSchema.parse(args));
             break;
 
           case 'delete_dataset':
@@ -1040,10 +908,7 @@ export class DataikuMcpServer {
             break;
 
           case 'build_dataset':
-            result = await this.client.buildDataset(String(args.project_key), String(args.dataset_name), {
-              mode: args.mode as string,
-              partition: args.partition as string,
-            });
+            result = await this.client.buildDataset(buildDatasetSchema.parse(args));
             break;
 
           case 'inspect_dataset_schema':
@@ -1090,15 +955,21 @@ export class DataikuMcpServer {
             };
             break;
 
+          case 'list_flow_zones':
+            result = await this.client.listFlowZones(args); break;
+          case 'get_flow_object_zone':
+            result = await this.client.getFlowObjectZone(args); break;
+          case 'move_flow_items':
+            result = await this.client.moveFlowItems(args); break;
           case 'get_project_flow':
-            result = await this.client.getProjectFlow(String(args.project_key));
+            result = await this.client.getProjectFlow(String(args.project_key), { detail: args.detail, max_objects: args.max_objects });
             break;
 
           case 'get_dataset_sample':
             result = await this.client.getDatasetSample(
               String(args.project_key),
               String(args.dataset_name),
-              Number(args.rows) || 100,
+              args.rows === undefined ? 100 : args.rows as number,
               args.columns as string[]
             );
             break;
@@ -1246,6 +1117,16 @@ export class DataikuMcpServer {
             result = await this.client.getConnections(args.project_key as string);
             break;
 
+          case 'get_job_status':
+            result = await this.client.getJobStatus(jobStatusSchema.parse(args));
+            break;
+          case 'wait_for_job':
+            result = await this.client.waitForJob(waitForJobSchema.parse(args));
+            break;
+          case 'get_job_log':
+            result = await this.client.getJobLog(jobLogSchema.parse(args));
+            break;
+
           case 'get_job_details':
             result = await this.client.getJobDetails(String(args.project_key), String(args.job_id));
             break;
@@ -1262,10 +1143,6 @@ export class DataikuMcpServer {
               String(args.pattern),
               args.updates as Record<string, any>
             );
-            break;
-
-          case 'get_project_flow':
-            result = await this.client.getProjectFlow(String(args.project_key));
             break;
 
           case 'export_project_config':
@@ -1288,7 +1165,7 @@ export class DataikuMcpServer {
           content: [
             {
               type: 'text',
-              text: JSON.stringify(result, null, 2),
+              text: JSON.stringify(sanitize(result, process.env.DSS_API_KEY ?? ''), null, 2),
             },
           ],
         };
@@ -1297,7 +1174,7 @@ export class DataikuMcpServer {
           content: [
             {
               type: 'text',
-              text: `Error: ${error instanceof Error ? error.message : String(error)}`,
+              text: JSON.stringify(sanitize(errorDetails(error), process.env.DSS_API_KEY ?? ''), null, 2),
             },
           ],
           isError: true,
