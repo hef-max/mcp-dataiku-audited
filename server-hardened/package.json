@@ -21,7 +21,9 @@
     "start": "node dist/mcp-server.js",
     "check": "tsc --noEmit",
     "audit:prod": "npm audit --omit=dev --audit-level=high",
-    "prepack": "npm run check && npm run build"
+    "prepack": "npm run check && npm run build",
+    "lint": "eslint src",
+    "test": "npm run build && node --test test/*.test.mjs"
   },
   "keywords": [
     "mcp",
@@ -38,11 +40,15 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.30.0"
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
   },
   "devDependencies": {
+    "@eslint/js": "9.39.5",
     "@types/node": "22.15.30",
-    "typescript": "5.8.3"
+    "eslint": "9.39.5",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.70.1"
   },
   "private": true
 }

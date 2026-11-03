@@ -2,6 +2,16 @@
 
 This directory is an auditable local fork. Read [SECURITY.md](SECURITY.md) for the applied controls and [UPSTREAM.md](UPSTREAM.md) for source provenance.
 
+Flow zones, verified batch assignment and zone-aware provisioning are documented in [FLOW_ZONES.md](FLOW_ZONES.md). `create_recipe`, `create_dataset` and new zone mutations default to `dry_run:true`; pass `dry_run:false` explicitly for actual creation. Existing update/delete/job defaults are unchanged. `export_project_config` provides a JSON Flow snapshot, not a full ZIP export.
+
+Join payload parsing, verified updates and partial-recipe recovery are documented in [JOIN_REPAIR.md](JOIN_REPAIR.md).
+
+Explicit dataset schema updates and final visual output-schema application are documented in [SCHEMA_SYNC.md](SCHEMA_SYNC.md).
+
+Dataset/recipe job execution and monitoring are documented in [JOB_API.md](JOB_API.md). Builds default to non-recursive async jobs and never update schemas automatically.
+
+The current typed create/update/inspect recipe API is documented in [VISUAL_RECIPES.md](VISUAL_RECIPES.md). Run `npm run check`, `npm run lint`, and `npm test`; compile with `npm run build`. The launcher runs Node.js, not uvx. TLS certificate verification is mandatory; `DSS_INSECURE_TLS=true` is rejected. Recipe creation never builds datasets. Explicit `new:true` outputs can provision managed storage; see [DATASET_PROVISIONING.md](DATASET_PROVISIONING.md). Window supports explicit native configuration and legacy templates; see [WINDOW_RECIPES.md](WINDOW_RECIPES.md). Distinct still requires a native template.
+
 > The remainder of this document is the upstream README and may describe the original npm package rather than this hardened build.
 # Dataiku DSS MCP Server
 
@@ -275,3 +285,7 @@ If you encounter any issues or have questions, please [open an issue](https://gi
 ---
 
 **Ready to enhance your Dataiku workflows with AI assistance!** 🚀
+
+Prepare DateParser/template cloning, complete visual rewiring, and bounded sample reads are documented in [VISUAL_REFACTOR.md](VISUAL_REFACTOR.md).
+
+For schema-identical slot replacement preserving native Vstack REMAP, use [replace_visual_recipe_input](INPUT_REPLACEMENT.md).

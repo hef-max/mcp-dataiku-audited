@@ -1,0 +1,189 @@
+{
+  "observed_at": "2026-09-27T08:27:34.932Z",
+  "transport": "GET only",
+  "examples": [
+    {
+      "project": "SAMPLE_007",
+      "recipe": "compute_BEST_NEWS_KI_MATCH",
+      "windows": [
+        {
+          "windowLimitMode": "ROWS",
+          "windowUpperBound": 0,
+          "enablePartitioning": true,
+          "enableOrdering": true,
+          "precedingRows": 0,
+          "limitFollowing": false,
+          "orders": [
+            {
+              "column": "MATCH_STATUS",
+              "desc": false
+            }
+          ],
+          "limitPreceding": false,
+          "followingRows": 0,
+          "windowLowerBound": 0,
+          "enableLimits": false,
+          "partitioningColumns": [
+            "KI_ID"
+          ]
+        }
+      ],
+      "computedColumns": [],
+      "outputColumnNameOverrides": {
+        "NEWS_PUBLISHED_min": "FIRST_NEWS_AT",
+        "KI_PUBLISHED_AT_min": "FIRST_KI_AT",
+        "KI_PUBLISHED_AT_first": "FIRST_KI_AT"
+      },
+      "rowNumber": false,
+      "rank": false,
+      "denseRank": false,
+      "values": [
+        {
+          "lagDiff": false,
+          "$idx": 3,
+          "lagValues": "1",
+          "sum": false,
+          "type": "datetimenotz",
+          "dateDiffUnit": "DAY",
+          "min": true,
+          "avg": false,
+          "lag": false,
+          "leadValues": "1",
+          "$selected": false,
+          "stddev": false,
+          "value": true,
+          "orderColumn": "NEWS_SOURCE",
+          "last": false,
+          "max": false,
+          "firstLastNotNull": false,
+          "column": "NEWS_PUBLISHED",
+          "count": false,
+          "concat": false,
+          "lead": false,
+          "concatDistinct": false,
+          "countDistinct": false,
+          "leadDiff": false,
+          "first": false
+        },
+        {
+          "lagDiff": false,
+          "$idx": 30,
+          "lagValues": "1",
+          "sum": false,
+          "type": "datetimenotz",
+          "dateDiffUnit": "DAY",
+          "min": true,
+          "avg": false,
+          "lag": false,
+          "leadValues": "1",
+          "$selected": false,
+          "stddev": false,
+          "value": true,
+          "orderColumn": "NEWS_SOURCE",
+          "last": false,
+          "max": false,
+          "firstLastNotNull": false,
+          "column": "KI_PUBLISHED_AT",
+          "count": false,
+          "concat": false,
+          "lead": false,
+          "concatDistinct": false,
+          "countDistinct": false,
+          "leadDiff": false,
+          "first": false
+        }
+      ],
+      "observed_output_schema": []
+    },
+    {
+      "project": "SOL_NEXT_BEST_OFFER",
+      "recipe": "compute_data_results_impact_ranked",
+      "windows": [
+        {
+          "windowUpperBound": 0,
+          "enablePartitioning": true,
+          "enableOrdering": true,
+          "precedingRows": 0,
+          "limitFollowing": false,
+          "orders": [
+            {
+              "column": "proba_1",
+              "desc": false
+            }
+          ],
+          "limitPreceding": false,
+          "followingRows": 0,
+          "windowLowerBound": 0,
+          "enableLimits": false,
+          "partitioningColumns": [
+            "product"
+          ]
+        }
+      ],
+      "computedColumns": [],
+      "outputColumnNameOverrides": {
+        "rownumber": "rank"
+      },
+      "rowNumber": true,
+      "rank": false,
+      "denseRank": false,
+      "values": [],
+      "observed_output_schema": [
+        {
+          "name": "rownumber",
+          "type": "bigint"
+        }
+      ]
+    },
+    {
+      "project": "SOL_DKU_MONITORING",
+      "recipe": "compute_logs_local_process_memory_rank",
+      "windows": [
+        {
+          "windowUpperBound": 0,
+          "enablePartitioning": true,
+          "enableOrdering": true,
+          "precedingRows": 0,
+          "limitFollowing": false,
+          "followingRows": 0,
+          "partitioningColumns": [
+            "execution_location"
+          ],
+          "windowLimitMode": "RANGE",
+          "windowDateRangeUnit": "DAY",
+          "limitPreceding": false,
+          "orders": [
+            {
+              "column": "memory_MB_sum",
+              "desc": true
+            }
+          ],
+          "windowLowerBound": 0,
+          "enableLimits": true
+        }
+      ],
+      "computedColumns": [],
+      "outputColumnNameOverrides": {},
+      "rowNumber": false,
+      "rank": false,
+      "denseRank": true,
+      "values": [],
+      "observed_output_schema": [
+        {
+          "name": "denserank",
+          "type": "bigint"
+        }
+      ]
+    }
+  ],
+  "official_ui": {
+    "path": "/static/dataiku/js/flowpack.hashed.108e497dc5f1.js",
+    "sha256": "11da7fd87512e133a9846ecf2948e2c42c102c4b7862d32d8b35806ac1a22ea6",
+    "computed_column_initialization": "computedColumnListDesc.push({name:\"\",type:\"double\",expr:\"\",mode:\"GREL\"});$timeout(function(){element.find(\"[compute"
+  },
+  "references": [
+    "https://doc.dataiku.com/dss/latest/other_recipes/window.html",
+    "https://doc.dataiku.com/dss/latest/other_recipes/sort.html",
+    "https://doc.dataiku.com/dss/latest/formula/index.html"
+  ]
+}
